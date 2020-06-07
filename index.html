@@ -1,48 +1,98 @@
 <html>
-<head>
-  <title>Home</title>
-  <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-  <link rel= "stylesheet" href="style.css"/>
-  <script src="https://code.jquery.com/jquery-3.4.1.js"> </script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <head>
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
+  <body>
+    <a href="#donate">
+      <button class="donate">
+        Donate Now
+      </button>
+    </a>
 
-
-
-<body>
-
-  <button class="donate">
-    Donate Now
-  </button>
-
-  <div class="header">
-    <div class="left"><a href="index.html">Piedmont</a></div>
-    <div class="right">
-      <div class="nav"><a href="move.html">The Movement</a></div>
-      <div class="nav"><a href="calculate.html">Contribution Calculator</a></div>
-      <div class="nav"><a href="about.html">About Us</a></div>
+    <div class="header">
+      <div class="left"><a href="index.html">Piedmont</a></div>
+      <div class="right">
+        <div class="nav"><a href="move.html">The Movement</a></div>
+        <div class="nav">
+          <a href="calculate.html">Contribution Calculator</a>
+        </div>
+        <div class="nav"><a href="about.html">About Us</a></div>
+      </div>
     </div>
-  </div>
+    <div class="spacer"></div>
+    <div class="textcontain">
+      <p class="maintext">
+        Piedmont has raised
 
+        <span id="bigmoney">$2,035,125</span> for BLM. Care to add on?
+      </p>
+    </div>
+    <div class="textcontain">
+      <p>
+        Nunc accumsan purus sit amet nunc lobortis, ac lacinia diam porta.
+        Vivamus ac elementum purus, convallis aliquam ex. Aliquam ut nisl ut
+        odio porttitor viverra sit amet at arcu. Vestibulum vitae est posuere,
+        pulvinar orci suscipit, aliquet dolor. Praesent placerat lacus nec mi
+        aliquet, eu pellentesque ligula congue. Duis aliquam porttitor
+        vestibulum. Aliquam porta dolor eget tortor pulvinar, eu rutrum velit
+        tincidunt. Sed auctor turpis nec iaculis fermentum. Sed id nibh
+        pellentesque, dictum sapien eget, aliquet leo. In dui eros, pharetra
+        vitae pretium et, maximus quis massa. Mauris ex urna, rutrum et euismod
+        id, dictum a ante. Morbi tincidunt, tortor vel ullamcorper auctor, leo
+        nunc elementum justo, quis ornare erat enim eu tellus. Mauris nisl
+        ligula, ultrices vitae tellus ut, cursus rhoncus lorem.
+      </p>
+    </div>
 
+    <!-- feel free to move anything from this point downward to a different place -->
+    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
+    <a name="donate"></a>
+    <div class="textcontain">
+      <!-- this is the donor wall -->
+      <iframe
+        frameborder="0"
+        name="donorbox"
+        scrolling="no"
+        seamless="seamless"
+        src="https://donorbox.org/embed/piedmont-for-black-lives?only_donor_wall=true"
+        style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"
+      ></iframe>
+      <!-- this is the donation form -->
+      <iframe
+        id="donation-form"
+        allowpaymentrequest=""
+        frameborder="0"
+        height="900px"
+        name="donorbox"
+        scrolling="no"
+        seamless="seamless"
+        src="https://donorbox.org/embed/piedmont-for-black-lives?default_interval=o"
+        style="max-width: 800px; min-width: 250px; max-height:none!important"
+        width="100%"
+      ></iframe>
 
-  <div class="textcontain">
-      <div class="spacer"></div>
-    <p class="maintext">
-      Piedmont has raised
-      <span id="bigmoney">$2,035,125</span> for BLM.
-      Care to add on?
-    </p>
-  </div>
-  <div class="textcontain">
-  <p>Nunc accumsan purus sit amet nunc lobortis, ac lacinia diam porta. Vivamus ac elementum purus, convallis aliquam ex. Aliquam ut nisl ut odio porttitor viverra sit amet at arcu. Vestibulum vitae est posuere, pulvinar orci suscipit, aliquet dolor. Praesent placerat lacus nec mi aliquet, eu pellentesque ligula congue. Duis aliquam porttitor vestibulum. Aliquam porta dolor eget tortor pulvinar, eu rutrum velit tincidunt. Sed auctor turpis nec iaculis fermentum. Sed id nibh pellentesque, dictum sapien eget, aliquet leo. In dui eros, pharetra vitae pretium et, maximus quis massa. Mauris ex urna, rutrum et euismod id, dictum a ante. Morbi tincidunt, tortor vel ullamcorper auctor, leo nunc elementum justo, quis ornare erat enim eu tellus. Mauris nisl ligula, ultrices vitae tellus ut, cursus rhoncus lorem.
-  </p>
-</div>
+      <!-- <script>
+        //IGNORE THIS FOR NOW
 
-
-
-</body>
+        // var totalRaised = document.getElementById("goal-meter");
+        // var iframe = document.getElementById("donation-form");
+        // var totalRaised = iframe.contentWindow.document.getElementById("total-raised").innerHTML;
+        // document.getElementById("bigmoney").innerHTML = totalRaised;
+        // totalRaised.onload = function() {
+        //   document.getElementById("bigmoney").innerHTML = document.getElementById("total-raised").innerHTML;
+        //   console.log(document.getElementById("total-raised"))
+        // };
+      </script> -->
+    </div>
+  </body>
 </html>

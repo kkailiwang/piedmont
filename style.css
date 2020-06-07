@@ -47,7 +47,7 @@ body {
 
 .textcontain {
   height: 100vh;
-  display; flex;
+  display: flex;
   justify-content: flex-end;
   width: 95%;
   background: white;
