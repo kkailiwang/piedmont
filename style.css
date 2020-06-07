@@ -6,33 +6,101 @@ body {
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  place-items: center;
+
 }
 
 .header {
   display: flex;
   flex-direction: row;
-  position: absolute;
+  align-items: center;
+  position: fixed;
   top:0;
   width: 100vw;
-  font-size: 25px;
-
+  height: 10vh;
+  background: white;
+  font-size: 0.3em;
+  z-index: 20;
 }
 
 .left {
-  width: 50%;
-  padding-top: 1em;
+  width: 25%;
   padding-left: 2em;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
 }
 
 .right {
-  width: 50%;
-  padding-top: 1em;
+  width: 75%;
   padding-right: 2em;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+}
+
+.nav {
+  margin-left: 3vw;
+  align-items: center;
+  text-align: right;
+}
+
+.textcontain {
+  height: 100vh;
+  display; flex;
+  justify-content: flex-end;
+  width: 95%;
+  background: white;
+}
+
+.maintext {
+  font-size: 1.9em;
+}
+
+.donate {
+  position: fixed;
+  bottom: 4vw;
+  right: 5vw;
+  z-index: 20;
+  height: 100px;
+  width: 400px;
+  font-size: 0.6em;
+  background: #BC28E1;
+  border-radius: 50px;
+  border: 0px;
+  color: white;
+  transition: background 300ms;
+}
+
+.donate:hover{
+  background: black;
+
+}
+
+.spacer {
+  width: 95vw;
+  height: 5vh;
+}
+
+p {
+  width: 95%;
+  font-size: 0.6em;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-color: none;
+  color: black;
+  transition: color 300ms;
+}
+
+a:hover {
+  color: grey;
+}
+
+#bigmoney{
+  transition: color 400ms;
+}
+#bigmoney:hover {
+  color: #BC28E1;
 }
