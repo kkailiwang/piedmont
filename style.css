@@ -1,7 +1,9 @@
 body {
   margin:0;
   padding: 0;
-  height: 100vh;
+  margin-bottom: 30px;
+  width: 100%;
+  min-width: 500px;
   font-size: 5em;
   font-family: sans-serif;
   display: flex;
@@ -10,6 +12,7 @@ body {
 
 }
 
+/* the party up top */
 .header {
   display: flex;
   flex-direction: row;
@@ -29,6 +32,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-weight: bold;
 }
 
 .right {
@@ -45,28 +49,31 @@ body {
   text-align: right;
 }
 
+/* the big boy text */
 .textcontain {
-  height: 100vh;
   display: flex;
-  justify-content: flex-end;
   width: 95%;
+  height: 95vh;
+  font-size: 2em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: white;
 }
 
-.maintext {
-  font-size: 1.9em;
-}
 
+
+/* the button of all buttons, button to the stars, big kahuna button */
 .donate {
   position: fixed;
   bottom: 4vw;
   right: 5vw;
   z-index: 20;
   height: 100px;
-  width: 400px;
-  font-size: 0.6em;
+  width: 320px;
+  font-size: 0.45em;
   background: #BC28E1;
-  border-radius: 50px;
+  border-radius: 90px;
   border: 0px;
   color: white;
   transition: background 300ms;
@@ -77,16 +84,21 @@ body {
 
 }
 
+/* hey babe, all divs need to take some space from time to time */
 .spacer {
-  width: 95vw;
+  display: flex;
+  width: 90vw;
   height: 5vh;
+  background-color: white;
 }
 
+/* this ones gonna come back and bite me in the ass, I'm calling it here and now */
 p {
-  width: 95%;
+  width: 100%;
   font-size: 0.6em;
 }
 
+/* get it done by so you can hit the LINKS */
 a {
   text-decoration: none;
   text-decoration-color: none;
@@ -98,9 +110,158 @@ a:hover {
   color: #BC28E1;
 }
 
+/* alright, the placeholders a little lofty but y'know shoot for the moon, land on the stars or some shit am I right? */
 #bigmoney{
   transition: color 400ms;
 }
 #bigmoney:hover {
   color: #BC28E1;
+}
+
+/* this ones fucking HARD. goddamn donorbox */
+
+.done {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  background: white;
+
+}
+
+/* top of the pops: filters for leaderboard*/
+
+.topochico{
+  display: flex;
+  width: 95%;
+  height: 9vh;
+
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+
+}
+
+.totheleft {
+
+  width: 60%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-weight: bold;
+}
+
+.most {
+  height: 60px;
+  width: 170px;
+  border-width: 1px;
+  border-radius: 50px;
+  border-color: black;
+  margin-right: 1vw;
+  background: white;
+  font-size: 0.3em;
+  transition: background 200ms;
+
+}
+
+.most:hover{
+    background: black;
+    color: white;
+}
+
+
+.highest {
+  height: 60px;
+  width: 240px;
+  border-width: 1px;
+  border-radius: 50px;
+  border-color: black;
+  margin-right: 1vw;
+  background: white;
+  font-size: 0.3em;
+  transition: background 200ms;
+}
+
+.highest:hover{
+    background: black;
+    color: white;
+}
+
+.totheright {
+  width: 60%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.search {
+  height: 60px;
+  width: 300px;
+  border-width: 1px;
+  border-radius: 50px;
+  border-color: black;
+  margin-right: 1vw;
+  background: white;
+  font-size: 0.3em;
+  padding-left: 1em;
+  color: black;
+}
+
+.seek{
+  height: 60px;
+  width: 60px;
+  border-radius:50%;
+  border-width: 0px;
+  background: black;
+  transition: background 200ms;
+}
+
+.seek:hover{
+    background: #BC28E1;
+}
+.magnify {
+  height: 32px;
+  width: 32px;
+  z-index: 20;
+}
+
+/* THE LEADERBOARD */
+
+.leader {
+  display: flex;
+  flex-direction: row;
+  width: 95vw;
+  background: white;
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.rightright {
+  display: flex;
+  width: 50%;
+  justify-content: flex-start;
+  font-size: 0.3em;
+
+}
+
+.wrongwrong {
+  display: flex;
+  width: 50%;
+  font-size: 0.3em;
+  justify-content: flex-end;
+  color: grey;
 }
