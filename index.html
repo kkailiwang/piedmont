@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <a href="#donate">
+    <a href="donate.html">
       <button class="donate">
         Donate Now
       </button>
@@ -32,68 +32,39 @@
     </div>
     <div class="spacer"></div>
     <div class="textcontain">
-      <p class="maintext">
-        Piedmont has raised
+        <div class="maintext">
+        Piedmont has raised <span id="bigmoney">$2,035,125</span> for BLM. Care to add on?
+      </div>
+    </div>
 
-        <span id="bigmoney">$2,035,125</span> for BLM. Care to add on?
-      </p>
-    </div>
-    <div class="textcontain">
-      <p>
-        Nunc accumsan purus sit amet nunc lobortis, ac lacinia diam porta.
-        Vivamus ac elementum purus, convallis aliquam ex. Aliquam ut nisl ut
-        odio porttitor viverra sit amet at arcu. Vestibulum vitae est posuere,
-        pulvinar orci suscipit, aliquet dolor. Praesent placerat lacus nec mi
-        aliquet, eu pellentesque ligula congue. Duis aliquam porttitor
-        vestibulum. Aliquam porta dolor eget tortor pulvinar, eu rutrum velit
-        tincidunt. Sed auctor turpis nec iaculis fermentum. Sed id nibh
-        pellentesque, dictum sapien eget, aliquet leo. In dui eros, pharetra
-        vitae pretium et, maximus quis massa. Mauris ex urna, rutrum et euismod
-        id, dictum a ante. Morbi tincidunt, tortor vel ullamcorper auctor, leo
-        nunc elementum justo, quis ornare erat enim eu tellus. Mauris nisl
-        ligula, ultrices vitae tellus ut, cursus rhoncus lorem.
-      </p>
-    </div>
+      <div class="topochico">
+
+        <div class="totheleft">
+          <button class="most">Most recent</button>
+          <button class="highest">Highest Donations</button>
+        </div>
+
+        <div class="totheright">
+
+              <input class="search" placeholder="Search" type="text" id="fname" name="fname"><br>
+              <button class="seek"><img class="magnify" src="seeker.png"></img></button>
+
+        </div>
+      </div>
+
+      <div class="leader">
+        <div class="rightright">
+          <span id="amount">$5,125 </span> &nbspby&nbsp <span id="richfuck"> Chad Ollcott</span>
+        </div>
+        <div class="wrongwrong">
+            <span id="date">6/5/2020</span>,&nbsp<span id="time">10:28 AM</span>
+        </div>
+      </div>
+
+
 
     <!-- feel free to move anything from this point downward to a different place -->
-    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
-    <a name="donate"></a>
-    <div class="textcontain">
-      <!-- this is the donor wall -->
-      <iframe
-        frameborder="0"
-        name="donorbox"
-        scrolling="no"
-        seamless="seamless"
-        src="https://donorbox.org/embed/piedmont-for-black-lives?only_donor_wall=true"
-        style="width: 100%; max-width:500px; min-width:310px; max-height: none !important"
-      ></iframe>
-      <!-- this is the donation form -->
-      <iframe
-        id="donation-form"
-        allowpaymentrequest=""
-        frameborder="0"
-        height="900px"
-        name="donorbox"
-        scrolling="no"
-        seamless="seamless"
-        src="https://donorbox.org/embed/piedmont-for-black-lives?default_interval=o"
-        style="max-width: 800px; min-width: 250px; max-height:none!important"
-        width="100%"
-      ></iframe>
 
-      <!-- <script>
-        //IGNORE THIS FOR NOW
-
-        // var totalRaised = document.getElementById("goal-meter");
-        // var iframe = document.getElementById("donation-form");
-        // var totalRaised = iframe.contentWindow.document.getElementById("total-raised").innerHTML;
-        // document.getElementById("bigmoney").innerHTML = totalRaised;
-        // totalRaised.onload = function() {
-        //   document.getElementById("bigmoney").innerHTML = document.getElementById("total-raised").innerHTML;
-        //   console.log(document.getElementById("total-raised"))
-        // };
-      </script> -->
     </div>
   </body>
 </html>
