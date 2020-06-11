@@ -1,0 +1,23 @@
+{
+  "name": "piedmont",
+  "version": "1.0.0",
+  "description": "website for piedmont for black lives",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkailiwang/piedmont.git"
+  },
+  "author": "jono, kaili, finn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkailiwang/piedmont/issues"
+  },
+  "homepage": "https://github.com/kkailiwang/piedmont#readme",
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/polyfill": "^7.10.1"
+  }
+}
