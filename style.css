@@ -252,10 +252,19 @@ a:hover {
 
 .rightright {
   display: flex;
-  width: 50%;
+  flex-direction: column;
+  width: 100%;
   justify-content: flex-start;
   font-size: 0.3em;
+  
+}
 
+.leader-elem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 0.3em;
 }
 
 .wrongwrong {
