@@ -1,0 +1,25 @@
+{
+  "name": "piedmont",
+  "version": "1.0.0",
+  "description": "website for piedmont for black lives",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkailiwang/piedmont.git"
+  },
+  "author": "jono, kaili, finn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkailiwang/piedmont/issues"
+  },
+  "homepage": "https://github.com/kkailiwang/piedmont#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
