@@ -17,203 +17,53 @@
     />
   </head>
 
-  <!-- API key for donorbox: ijBKAnIcBzXWv597Ff5D4KIaBFVIDbMfnWXi4AFxu1uij73Jil3JOQ -->
-
   <body>
-    <a href="donate.html">
-      <button class="donate">
-        Donate Now
-      </button>
-    </a>
+    <div class="copy">
+      Piedmomt Action Hour!
+      <a href="https://www.facebook.com/events/265574994778523/?notif_t=plan_user_invited&notif_id=1592081072031558">June 18, 6-7 PM</a>
+    Launching our
+    campaign for
+    education equity
+    in Oakland.
 
-    <div class="header">
-      <div class="left"><a href="index.html">Piedmont</a></div>
-      <div class="right">
-        <div class="nav"><a href="move.html">The Movement</a></div>
-        <div class="nav">
-          <a href="calculate.html">Contribution Calculator</a>
-        </div>
-        <div class="nav"><a href="about.html">About Us</a></div>
-      </div>
-    </div>
-    <div class="spacer"></div>
-    <div class="textcontain">
-        <div class="maintext">
-        Piedmont has raised <span id="bigmoney">$2,035,125</span> for BLM. Care to add on?
-      </div>
     </div>
 
-      <div class="topochico">
 
-        <div class="totheleft">
-          <button class="most">Most recent</button>
-          <button class="highest">Highest Donations</button>
-        </div>
+<div class="clock">
+<p id="demo"></p>
+</div>
 
-        <div class="totheright">
 
-              <input class="search" placeholder="Search" type="text" id="fname" name="fname"><br>
-              <button class="seek"><img class="magnify" src="seeker.png"></img></button>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("June 18, 2020 15:37:25").getTime();
 
-        </div>
-      </div>
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-      <div class="leader" id="leader-list" style="flex-direction: column">
-          <!-- <button id="authorize_button" style="display: none;">Authorize</button>
-          <button id="signout_button" style="display: none;">Sign Out</button> -->
-        <!-- <div class="rightright" style="flex-direction:column;" id="leader-list">
-          
-        </div>
-        <div class="wrongwrong" id="times-list" style="flex-direction:column;">
-            
-        </div> -->
-        <!-- <pre id="content" style="white-space: pre-wrap;"></pre> -->
-      </div>
-<<<<<<< HEAD
-      <div class="leader">
-        <div class="rightright">
-          <span id="amount">$5,125 </span> &nbspby&nbsp <span id="richfuck"> Chad Ollcott</span>
-        </div>
-        <div class="wrongwrong">
-            <span id="date">6/5/2020</span>,&nbsp<span id="time">10:28 AM</span>
-        </div>
-      </div><div class="leader">
-        <div class="rightright">
-          <span id="amount">$5,125 </span> &nbspby&nbsp <span id="richfuck"> Chad Ollcott</span>
-        </div>
-        <div class="wrongwrong">
-            <span id="date">6/5/2020</span>,&nbsp<span id="time">10:28 AM</span>
-        </div>
-      </div><div class="leader">
-        <div class="rightright">
-          <span id="amount">$5,125 </span> &nbspby&nbsp <span id="richfuck"> Chad Ollcott</span>
-        </div>
-        <div class="wrongwrong">
-            <span id="date">6/5/2020</span>,&nbsp<span id="time">10:28 AM</span>
-        </div>
-      </div><div class="leader">
-        <div class="rightright">
-          <span id="amount">$5,125 </span> &nbspby&nbsp <span id="richfuck"> Chad Ollcott</span>
-        </div>
-        <div class="wrongwrong">
-            <span id="date">6/5/2020</span>,&nbsp<span id="time">10:28 AM</span>
-        </div>
-      </div><div class="leader">
-        <div class="rightright">
-          <span id="amount">$5,125 </span> &nbspby&nbsp <span id="richfuck"> Chad Ollcott</span>
-        </div>
-        <div class="wrongwrong">
-            <span id="date">6/5/2020</span>,&nbsp<span id="time">10:28 AM</span>
-        </div>
-      </div><div class="leader">
-        <div class="rightright">
-          <span id="amount">$5,125 </span> &nbspby&nbsp <span id="richfuck"> Chad Ollcott</span>
-        </div>
-        <div class="wrongwrong">
-            <span id="date">6/5/2020</span>,&nbsp<span id="time">10:28 AM</span>
-        </div>
-      </div>
-=======
-      
-      <!-- <script src="index.js" ></script> -->
-      <script type="text/javascript">
+  // Get today's date and time
+  var now = new Date().getTime();
 
-        //API key: AIzaSyD8JIqf1qEaiwTFKKuFYpTRsE2ek8S4oyE
-        // Client ID and API key from the Developer Console
-        var CLIENT_ID = '239112592362-oogbtgit5om42erh2676hq820v6vvvue.apps.googleusercontent.com';
-        var API_KEY = 'AIzaSyD8JIqf1qEaiwTFKKuFYpTRsE2ek8S4oyE'
-        
-        // // Array of API discovery doc URLs for APIs used by the quickstart
-        var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
-  
-        // // Authorization scopes required by the API; multiple scopes can be
-        // // included, separated by spaces.
-        var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
-  
-        // var authorizeButton = document.getElementById('authorize_button');
-        // var signoutButton = document.getElementById('signout_button');
-  
-        // /**
-        //  *  On load, called to load the auth2 library and API client library.
-        //  */
-        function handleClientLoad() {
-          gapi.load('client:auth2', initClient);
-        }
-  
-        // /**
-        //  *  Initializes the API client library and sets up sign-in state
-        //  *  listeners.
-        //  */
-        function initClient() {
-          gapi.client.init({
-            apiKey: API_KEY,
-            clientId: CLIENT_ID,
-            discoveryDocs: DISCOVERY_DOCS,
-            scope: SCOPES
-          }).then(function () {
-          }, function(error) {
-            console.log(error)
-          });
-        }
-  
-        const base = 'https://sheets.googleapis.com/v4/spreadsheets/11QHV5h0HGR1zfSQ3QpzztlTQkWm-GyK8H-IqT_zuvew/values/';
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
 
-        //for leaderboard 
-        const donationsRange = 'Donors!B2:G?key=';
-        axios.get(base + donationsRange + API_KEY).then(res => {
-          const rows = res.data.values;
-          //example of a row:
-          // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE"]
-          console.log(rows);
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-          const leaders = document.getElementById("leader-list");
-          // let dateList = document.getElementById("times-list");
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + ":" + hours + ":"
+  + minutes + ":" + seconds;
 
-          rows.map(function (row, i) {
-            let leader = document.createElement("div");
-            let donation = document.createElement("div");
-            donation.innerHTML = `<span id="amount">${row[3]} </span> &nbspby&nbsp <span id="richfuck"> ${row[1]} ${row[2]}</span>`;
-            leader.appendChild(donation);
-
-            let date = document.createElement("div");
-            //Jono:
-            // you can do date.style._styleprop_ = 'propertyvalue'; like i did below with leader
-
-            let day = new Date(row[4]);
-            console.log(day);
-            date.innerHTML = `<span id="date">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span>`;
->>>>>>> b53fac13c6ecce810abbf302bae7f63ac42562a0
-
-            leader.style.display = 'flex';
-            leader.style.flexDirection = 'row';
-            leader.style.width = '100%';
-            leader.style.justifyContent = 'space-between'
-            leader.style.fontSize = '0.3em';
-
-            leader.appendChild(date);
-            leaders.appendChild(leader);
-          })
-          
-        }).catch(e => {
-          console.log(e);
-        })
-
-        //updating the total amount 
-        const totalRange = 'Main!A2?key=';
-        axios.get(base + totalRange + API_KEY).then(res => {
-          const total = res.data.values[0];
-          console.log(res.data.values[0]);
-          document.getElementById("bigmoney").innerHTML = total;
-        }).catch(e => {
-          console.log(e);
-        });
-  
-      </script>
-  
-      <script async defer src="https://apis.google.com/js/api.js"
-        onload="this.onload=function(){};handleClientLoad()"
-        onreadystatechange="if (this.readyState === 'complete') this.onload()">
-      </script>
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
     </div>
   </body>
 </html>
