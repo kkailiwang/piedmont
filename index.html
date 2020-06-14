@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <!-- <script src="./node_modules/axios/dist/axios.min.js"></script> -->
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <meta charset="utf-8" />
@@ -46,8 +46,8 @@
       <div class="topochico">
 
         <div class="totheleft">
-          <button class="most">Most recent</button>
-          <button class="highest">Highest Donations</button>
+          <button class="most" id="most-recent-btn">Most recent</button>
+          <button class="highest" id="highest-donation-btn">Highest Donations</button>
         </div>
 
         <div class="totheright">
@@ -113,42 +113,93 @@
   
         const base = 'https://sheets.googleapis.com/v4/spreadsheets/11QHV5h0HGR1zfSQ3QpzztlTQkWm-GyK8H-IqT_zuvew/values/';
 
+        // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE"]
+        //define the index constants
+        const FIRST_NAME = 1;
+        const LAST_NAME = 2;
+        const AMOUNT = 3;
+        const DATE = 4;
+        const ANONYMOUS = 5;
+
         //for leaderboard 
         const donationsRange = 'Donors!B2:G?key=';
         axios.get(base + donationsRange + API_KEY).then(res => {
-          const rows = res.data.values;
+          let rows = res.data.values;
           //example of a row:
           // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE"]
           console.log(rows);
 
+          rows = rows.map(row => {
+            let day = new Date(row[DATE]);
+            let anon = row[ANONYMOUS] === "TRUE" ? true : false;
+            let newRow = row;
+            newRow[AMOUNT] = Number(row[AMOUNT].substring(1));
+            newRow[DATE] = day;
+            newRow[ANONYMOUS] = anon;
+            return newRow;
+          });
+
+          //now, rows would be like ["6911336", "Kaili", "Wang", 6.00, Date object, false]
+
           const leaders = document.getElementById("leader-list");
           // let dateList = document.getElementById("times-list");
 
-          rows.map(function (row, i) {
-            let leader = document.createElement("div");
-            let donation = document.createElement("div");
-            donation.innerHTML = `<span id="amount">${row[3]} </span> &nbspby&nbsp <span id="richfuck"> ${row[1]} ${row[2]}</span>`;
-            leader.appendChild(donation);
+          const mostRecentButton = document.getElementById("most-recent-btn");
+          const highestDonationsButton = document.getElementById("highest-donation-btn");
 
-            let date = document.createElement("div");
-            //Jono:
-            // you can do date.style._styleprop_ = 'propertyvalue'; like i did below with leader
+          const displayLeaders = (arr) => {
+            arr.map(function (row, i) {
+              let leader = document.createElement("div");
+              let donation = document.createElement("div");
+              const name = row[ANONYMOUS]  ? "Anonymous" : `${row[FIRST_NAME]} ${row[LAST_NAME]}`;
+              donation.innerHTML = `<span id="amount">$${row[3]} </span> &nbspby&nbsp <span id="richfuck"> ${name}</span>`;
+              leader.appendChild(donation);
 
-            let day = new Date(row[4]);
-            console.log(day);
-            date.innerHTML = `<span id="date">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span>`;
+              let date = document.createElement("div");
+              //Jono:
+              // you can do date.style._styleprop_ = 'propertyvalue'; like i did below with leader
 
-            leader.style.display = 'flex';
-            leader.style.flexDirection = 'row';
-            leader.style.width = '100%';
-            leader.style.justifyContent = 'space-between'
-            leader.style.fontSize = '0.3em';
+              let day = row[DATE];
+              // console.log(day);
+              date.innerHTML = `<span id="date">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span>`;
 
-            leader.appendChild(date);
-            leaders.appendChild(leader);
-          })
+              leader.style.display = 'flex';
+              leader.style.flexDirection = 'row';
+              leader.style.width = '100%';
+              leader.style.justifyContent = 'space-between'
+              leader.style.fontSize = '0.3em';
+
+              leader.appendChild(date);
+              leaders.appendChild(leader);
+            });
+          }
+
+          mostRecentButton.onclick = () => {
+            leaders.innerHTML = ""; //clears table
+            let newRows = rows.sort((a, b) => {
+              return b[DATE] - a[DATE];
+              //  if (a[DATE] > b[DATE]) return -1;
+              //  if (a[DATE] == b[DATE]) return 0;
+            });
+            console.log(newRows);
+            displayLeaders(rows.slice(0, 30));
+          }
+
+          const displayHighest = () => {
+            leaders.innerHTML = "";
+            let newRows = rows.sort((a, b) => b[AMOUNT] - a[AMOUNT]);
+            console.log(newRows);
+            displayLeaders(rows.slice(0, 30));
+          }
+
+          highestDonationsButton.onclick = displayHighest;
+          //default
+          // displayHighest();
+          highestDonationsButton.click();
           
-        }).catch(e => {
+          
+        })
+        .catch(e => {
           console.log(e);
         })
 
@@ -158,7 +209,8 @@
           const total = res.data.values[0];
           console.log(res.data.values[0]);
           document.getElementById("bigmoney").innerHTML = total;
-        }).catch(e => {
+        })
+        .catch(e => {
           console.log(e);
         });
   
