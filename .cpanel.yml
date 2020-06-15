@@ -2,4 +2,14 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/popsproj/public_html/
-    - /bin/cp -R ./ $DEPLOYPATH
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R comingsoon.html $DEPLOYPATH
+    - /bin/cp -R comingsoon.css $DEPLOYPATH
+    - /bin/cp -R style.css $DEPLOYPATH
+    - /bin/cp -R Inter-Regular.woff $DEPLOYPATH
+    - /bin/cp -R Inter-Regular.woff2 $DEPLOYPATH
+    - /bin/cp -R Inter-Medium.woff $DEPLOYPATH
+    - /bin/cp -R Inter-Medium.woff2 $DEPLOYPATH
+    - /bin/cp -R Inter-SemiBold.woff $DEPLOYPATH
+    - /bin/cp -R Inter-SemiBold.woff2 $DEPLOYPATH
+
