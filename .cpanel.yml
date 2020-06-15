@@ -12,4 +12,6 @@ deployment:
     - /bin/cp -R Inter-Medium.woff2 $DEPLOYPATH
     - /bin/cp -R Inter-SemiBold.woff $DEPLOYPATH
     - /bin/cp -R Inter-SemiBold.woff2 $DEPLOYPATH
-
+    - /bin/cp -R donate.html $DEPLOYPATH
+    - /bin/cp -R move.html $DEPLOYPATH
+    - /bin/cp -R about.html $DEPLOYPATH

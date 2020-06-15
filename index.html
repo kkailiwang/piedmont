@@ -160,6 +160,9 @@
               leader.appendChild(donation);
 
               let date = document.createElement("div");
+
+
+
               //Jono:
               // you can do date.style._styleprop_ = 'propertyvalue'; like i did below with leader
 
@@ -172,6 +175,15 @@
               leader.style.width = '100%';
               leader.style.justifyContent = 'space-between'
               leader.style.fontSize = '0.3em';
+
+              /*
+              leader div
+              ----------------------------------------------------
+              | donation div                             date div |
+              | |^^^^^^^^^^^^|                           |^^^^^^^||
+              |  ^^^^^^^^^^^^                             ^^^^^^^ |
+              ----------------------------------------------------               
+              */
 
               leader.appendChild(date);
               leaders.appendChild(leader);
