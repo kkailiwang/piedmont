@@ -1,0 +1,107 @@
+
+body {
+    margin:0;
+    padding: 2.5%;
+    overflow: scroll;
+    margin-bottom: 30px;
+    width: 95%;
+    min-width: 500px;
+    font-size: 5em;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F9EC31;
+    }
+    
+    p {
+    font-size: 18vw;
+    margin-top: 0px;
+    }
+    
+    .clock {
+    
+    font-size: 20vw;
+    margin-top: 0px;
+    display: flex;
+    height: 20vw;
+    width: 95%;
+    position: fixed;
+    bottom: 2.5vh;
+    font-family: 'Inter';
+    font-weight: 400;
+    justify-content: flex-start;
+    }
+    
+    a {
+    color:black;
+    text-decoration: none;
+    }
+    
+    a:hover {
+    text-decoration: underline;
+    }
+    
+    .copy {
+    display: block;
+    width: 95%;
+    font-size: 5vw;
+    height: 30vw;
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 500;
+    font-display: swap;
+    justify-content: flex-start;
+    }
+    
+    @font-face {
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("Inter-Regular.woff2?v=3.13") format("woff2"),
+         url("Inter-Regular.woff?v=3.13") format("woff");
+    }
+    
+    @font-face {
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("Inter-Medium.woff2?v=3.13") format("woff2"),
+         url("Inter-Medium.woff?v=3.13") format("woff");
+    }
+    
+    @media only screen and (max-width: 700px) {
+    .copy {
+      display: block;
+      width: 86%;
+      font-size: 10vw;
+      height: 30vw;
+      font-family: 'Inter';
+      font-style:  normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url("Inter-Medium.woff2?v=3.13") format("woff2"),
+           url("Inter-Medium.woff?v=3.13") format("woff");
+      justify-content: flex-start;
+    
+    }
+    
+    body {
+    margin:0;
+    padding: 2%;
+    margin-bottom: 30px;
+    width: 90%;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F9EC31;
+    }
+    
+    a {
+      color:black;
+      text-decoration: underline;
+    }
+    }
