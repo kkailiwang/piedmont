@@ -58,11 +58,17 @@ body {
   font-weight: bold;
 }
 
+.logo {
+  height: 50px;
+  width: 120px;
+}
+
 .right {
   width: 75%;
   padding-right: 2em;
   display: flex;
   align-items: center;
+  align-content: flex-end;
   justify-content: flex-end;
 }
 
@@ -77,7 +83,7 @@ body {
   display: flex;
   width: 95%;
   height: 95vh;
-  font-size: 2em;
+  font-size: 8vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -89,12 +95,26 @@ body {
 }
 
 
+/* paragraph text */
+
+.para {
+  display: block;
+  width: 95%;
+  font-size: 40px;
+}
+
+.parabold {
+  display: block;
+  width: 95%;
+  font-size: 40px;
+  font-weight: 500;
+}
 
 /* the button of all buttons, button to the stars, big kahuna button */
 .donate {
   position: fixed;
-  bottom: 4vw;
-  right: 5vw;
+  bottom: 2.5vw;
+  right: 3vw;
   z-index: 20;
   height: 100px;
   width: 320px;
@@ -173,7 +193,7 @@ a:hover {
 .topochico{
   display: flex;
   width: 95%;
-  height: 9vh;
+  height: 100px;
   background-color: none;
   justify-content: center;
   align-items: center;
@@ -240,7 +260,7 @@ a:hover {
 
 .totheright {
   width: 60%;
-  background-color: white;
+  background-color: none;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -289,6 +309,7 @@ a:hover {
   background: white;
   border-style: solid;
   border-width: 0px;
+  padding-bottom: 20px;
 }
 
 .rightright {
@@ -297,42 +318,284 @@ a:hover {
   width: 100%;
   justify-content: flex-start;
   font-size: 0.3em;
-
+  padding-bottom: 20px;
 }
 
 .leader-elem {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 99%;
   justify-content: space-between;
   font-size: 0.3em;
-  padding: 20 0 20 0;
+  padding: 20 20 0 0;
+  padding-bottom: 20px;
+}
+
+.bottom-comment {
   border-bottom-style: solid;
   border-width: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 0.3em;
+  padding-bottom: 20px;
+
 }
+
+
 
 .wrongwrong {
   display: flex;
-  width: 50%;
+  width: 65%;
   font-size: 0.3em;
   justify-content: flex-end;
   color: grey;
 }
 
-#date{
+.donation-elem {
+  width: 15%;
+  font-weight: 500;
+  padding-bottom: 20px;
+  /* position: relative; */
+}
+.date-elem {
+  width: 20%;
   color:grey;
 }
 
-@media only screen and (max-width: 601px) {
+.middle-comment {
+  width: 50%;
+  left: 0;
+  padding-bottom: 20px;
+  /* position: relative; */
+}
 
-/* hidden 3 page nav */
-.right {
+
+
+.burger {
+  display: none;
+  position: fixed;
+  top: 3vh;
+  right: 5vw;
+  width: 100px;
+  z-index: 100;
+}
+
+
+@media only screen and (min-width: 801px) {
+  .bottom-comment {
+    display: none;
+
+    /* visibility: hidden; */
+  }
+
+  /* .middle-comment {
+    visibility: visible;
+  } */
+
+  .leader-elem {
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding: 20 20 0 0;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+/* up top */
+
+  .burger {
+    display: flex;
+    width: 35px;
+    z-index: 100;
+  }
+
+  .left {
+    width: 25%;
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+  }
+
+  .middle-comment {
+    display: none;
+    padding-bottom: 0px;
+    /* visibility: hidden; */
+  }
+
+  .leader {
+    width: 90%;
+    font-size: 20px;
+  }
+  .leader-elem {
+    padding: 20 0 0 0;
+    font-size: 20px;
+  }
+
+  .bottom-comment {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+  }
+  .donation-elem {
+    width: 75%;
+    font-size: 20px;
+    padding-bottom: 0px;
+  }
+  .date-elem {
+    width: 25%;
+    font-size: 20px;
+
+  }
+
+.nav {
   display: none;
 }
 
-/* big huh? look at you now you miserable peice of shit */
-.textcontain {
-  font-size: 40px;
-}
+  /* big huh? look at you now you miserable peice of shit */
+  .textcontain {
+    font-size: 60px;
+    width: 90%;
+    line-height: 110%;
+  }
+
+/* big bad button */
+  .donate {
+    position: fixed;
+    bottom: 6vw;
+    right: 7vw;
+    z-index: 20;
+    height: 70px;
+    width: 200px;
+    font-size: 22px;
+    background: black;
+    border-radius: 90px;
+    border: 0px;
+    color: white;
+    transition: background 300ms;
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+/* hot mess */
+  .topochico{
+    display: normal;
+  }
+
+  .topochico{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 160px;
+    background-color: none;
+    justify-content: left;
+    align-items: left;
+    align-content: left;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+
+  }
+
+  .totheleft {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-weight: bold;
+  }
+
+  .most {
+    height: 60px;
+    width: 40%;
+    border-width: 1px;
+    border-radius: 50px;
+    border-color: black;
+    margin-right: 10px;
+    background: white;
+    font-size: 20px;
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 400;
+    transition: background 200ms;
+
+  }
+  .highest {
+    height: 60px;
+    width: 60%;
+    border-width: 1px;
+    border-radius: 50px;
+    border-color: black;
+    margin-right: 1vw;
+    background: white;
+    font-size: 20px;
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 400;
+    font-display: swap;
+    transition: background 200ms;
+  }
+  .totheright {
+    width: 100%;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .search {
+    height: 60px;
+    width: 75%;
+    border-width: 1px;
+    border-radius: 50px;
+    border-color: black;
+    margin-right: 10px;
+    font-size: 20px;
+    padding-left: 1em;
+    color: black;
+  }
+
+  .seek{
+    height: 60px;
+    width: 60px;
+    border-radius:50%;
+    border-width: 0px;
+    background: black;
+    transition: background 200ms;
+  }
+  .seek:hover{
+      background: grey;
+  }
+  .magnify {
+    height: 32px;
+    width: 32px;
+    z-index: 20;
+  }
+
+  .maginfy:hover{
+      color: black;
+  }
+
+  /* paragraph text */
+
+  .para {
+    display: block;
+    width: 90%;
+    font-size: 30px;
+  }
+
+  .parabold {
+    width: 90%;
+    font-size: 30px;
+  }
 
 }
