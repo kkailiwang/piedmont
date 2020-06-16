@@ -124,13 +124,14 @@
         const AMOUNT = 3;
         const DATE = 4;
         const ANONYMOUS = 5;
+        const COMMENT = 6;
 
         //for leaderboard
-        const donationsRange = 'Donors!B2:G?key=';
+        const donationsRange = 'Donors!B2:H?key=';
         axios.get(base + donationsRange + API_KEY).then(res => {
           let rows = res.data.values;
           //example of a row:
-          // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE"]
+          // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE", "comment goes here"]
           console.log(rows);
 
           rows = rows.map(row => {
@@ -140,6 +141,8 @@
             newRow[AMOUNT] = Number(row[AMOUNT].substring(1));
             newRow[DATE] = day;
             newRow[ANONYMOUS] = anon;
+            // console.log(row[COMMENT]);
+            newRow[COMMENT] = row[COMMENT] == undefined ? "" : row[COMMENT];
             return newRow;
           });
 
@@ -159,20 +162,20 @@
               // let leader = document.createElement("div");
               // let donation = document.createElement("div");
               const name = row[ANONYMOUS]  ? "Anonymous" : `${row[FIRST_NAME]} ${row[LAST_NAME]}`;
-              let donation = `<div><span id="amount">$${row[3]} </span> by <span id="richfuck"> ${name}</span></div>`;
+              let donation = `<div class="donation-elem"><span id="amount">$${row[3]} </span> by <span id="richfuck"> ${name}</span></div>`;
               // leader.append(donation);
 
               // let date = document.createElement("div");
-
-
+              let comment = `<div class="middle-comment"> ${row[COMMENT]}</div>`;
+              let commentBottom = `<div class="bottom-comment"> ${row[COMMENT]}</div>`;
 
               //Jono:
               // you can do date.style._styleprop_ = 'propertyvalue'; like i did below with leader
 
               let day = row[DATE];
               // console.log(day);
-              let date = `<div><span id="date">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span></div>`;
-              let leader = `<div class="leader-elem">${donation}${date}</div>`;
+              let date = `<div><span class="date-elem">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span></div>`;
+              let leader = `<div class="leader-elem">${donation}${comment}${date}</div>`;
               
 
               // leader.style.display = 'flex';
@@ -197,7 +200,7 @@
               */
 
               // leader.appendChild(date);
-              leaders.append(leader);
+              leaders.append(leader, commentBottom);
             });
           }
 

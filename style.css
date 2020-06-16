@@ -307,10 +307,24 @@ a:hover {
   width: 100%;
   justify-content: space-between;
   font-size: 0.3em;
-  padding: 20 0 20 0;
+  padding: 20 0 0 0;
+  
+  
+}
+
+.bottom-comment {
   border-bottom-style: solid;
   border-width: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 0.3em;
+  padding-top: 20px;
+  
 }
+
+
 
 .wrongwrong {
   display: flex;
@@ -320,8 +334,59 @@ a:hover {
   color: grey;
 }
 
-#date{
+.donation-elem {
+  width: 30%;
+  /* position: relative; */
+}
+.date-elem {
+  width: 20%;
+}
+
+.middle-comment {
+  width: 50%;
+}
+
+.middle-comment {
+  left: 0;
+  /* position: relative; */
+}
+
+.date-elem {
   color:grey;
+}
+
+@media only screen and (min-width: 751px) {
+  .bottom-comment {
+    display: none;
+    /* visibility: hidden; */
+  }
+
+  /* .middle-comment {
+    visibility: visible;
+  } */
+
+  .leader-elem {
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding-bottom: 20px
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .middle-comment {
+    display: none;
+    
+    /* visibility: hidden; */
+  }
+
+  .bottom-comment {
+
+    width: 100%;
+  }
+  .date-elem, .donation-elem {
+    width: 50%;
+  }
+  
 }
 
 /* @media only screen and (min-width: 601px) */
