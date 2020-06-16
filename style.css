@@ -152,7 +152,7 @@ a:hover {
 }
 #bigmoney:hover {
   color: grey;
-  };
+
 }
 
 /* this ones fucking HARD. goddamn donorbox */
@@ -211,7 +211,7 @@ a:hover {
 
 }
 
-.most:hover{
+.most:hover, .highest:hover, .most.active-filter, .highest.active-filter {
     background: black;
     color: white;
 }
@@ -233,10 +233,10 @@ a:hover {
   transition: background 200ms;
 }
 
-.highest:hover{
+/* .highest:hover{
     background: black;
     color: white;
-}
+} */
 
 .totheright {
   width: 60%;
@@ -306,6 +306,9 @@ a:hover {
   width: 100%;
   justify-content: space-between;
   font-size: 0.3em;
+  padding: 20 0 20 0;
+  border-bottom-style: solid;
+  border-width: 1px;
 }
 
 .wrongwrong {

@@ -145,21 +145,24 @@
 
           //now, rows would be like ["6911336", "Kaili", "Wang", 6.00, Date object, false]
 
-          const leaders = document.getElementById("leader-list");
+          // const leaders = document.getElementById("leader-list");
+          const leaders = $('#leader-list');
           // let dateList = document.getElementById("times-list");
 
-          const mostRecentButton = document.getElementById("most-recent-btn");
-          const highestDonationsButton = document.getElementById("highest-donation-btn");
+          const mostRecentButton = $("#most-recent-btn");
+          const highestDonationsButton = $("#highest-donation-btn");
+
+          // console.log(leaders);
 
           const displayLeaders = (arr) => {
             arr.map(function (row, i) {
-              let leader = document.createElement("div");
-              let donation = document.createElement("div");
+              // let leader = document.createElement("div");
+              // let donation = document.createElement("div");
               const name = row[ANONYMOUS]  ? "Anonymous" : `${row[FIRST_NAME]} ${row[LAST_NAME]}`;
-              donation.innerHTML = `<span id="amount">$${row[3]} </span> by <span id="richfuck"> ${name}</span>`;
-              leader.appendChild(donation);
+              let donation = `<div><span id="amount">$${row[3]} </span> by <span id="richfuck"> ${name}</span></div>`;
+              // leader.append(donation);
 
-              let date = document.createElement("div");
+              // let date = document.createElement("div");
 
 
 
@@ -168,17 +171,19 @@
 
               let day = row[DATE];
               // console.log(day);
-              date.innerHTML = `<span id="date">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span>`;
+              let date = `<div><span id="date">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span></div>`;
+              let leader = `<div class="leader-elem">${donation}${date}</div>`;
+              
 
-              leader.style.display = 'flex';
-              leader.style.flexDirection = 'row';
-              leader.style.width = '100%';
-              leader.style.paddingTop = '20px';
-              leader.style.paddingBottom = '20px';
-              leader.style.borderBottomStyle = 'solid';
-              leader.style.borderWidth = '1px';
-              leader.style.justifyContent = 'space-between'
-              leader.style.fontSize = '0.3em';
+              // leader.style.display = 'flex';
+              // leader.style.flexDirection = 'row';
+              // leader.style.width = '100%';
+              // leader.style.paddingTop = '20px';
+              // leader.style.paddingBottom = '20px';
+              // leader.style.borderBottomStyle = 'solid';
+              // leader.style.borderWidth = '1px';
+              // leader.style.justifyContent = 'space-between'
+              // leader.style.fontSize = '0.3em';
 
 
 
@@ -191,13 +196,16 @@
               ----------------------------------------------------
               */
 
-              leader.appendChild(date);
-              leaders.appendChild(leader);
+              // leader.appendChild(date);
+              leaders.append(leader);
             });
           }
 
-          mostRecentButton.onclick = () => {
-            leaders.innerHTML = ""; //clears table
+          mostRecentButton.on('click',  () => {
+            highestDonationsButton.removeClass('active-filter');
+            mostRecentButton.addClass('active-filter');
+            // leaders.innerHTML = ""; //clears table
+            leaders.html("");
             let newRows = rows.sort((a, b) => {
               return b[DATE] - a[DATE];
               //  if (a[DATE] > b[DATE]) return -1;
@@ -205,16 +213,20 @@
             });
             console.log(newRows);
             displayLeaders(rows.slice(0, 30));
-          }
+          });
 
           const displayHighest = () => {
-            leaders.innerHTML = "";
+            highestDonationsButton.addClass('active-filter');
+            mostRecentButton.removeClass('active-filter');
+            // leaders.innerHTML = "";
+            leaders.html("");
             let newRows = rows.sort((a, b) => b[AMOUNT] - a[AMOUNT]);
             console.log(newRows);
             displayLeaders(rows.slice(0, 30));
           }
 
-          highestDonationsButton.onclick = displayHighest;
+          // highestDonationsButton.onclick = displayHighest;
+          highestDonationsButton.on('click', displayHighest);
           //default
           // displayHighest();
           highestDonationsButton.click();
