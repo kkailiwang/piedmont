@@ -17,6 +17,51 @@ src: url("Inter-Medium.woff2?v=3.13") format("woff2"),
      url("Inter-Medium.woff?v=3.13") format("woff");
 }
 
+.hammybutton {
+display: none;
+}
+
+.navmobile {
+display: none;
+}
+
+
+.background {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.background2 {
+  position: absolute;
+  display: none;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.background3 {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  margin-top: 10vh;
+  object-fit: cover;
+}
+
+.background4 {
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.background5 {
+  margin-top: 15vh;
+  display: flex;
+  height: auto;
+  width: 95%;
+}
 /* and we're off */
 
 body {
@@ -32,6 +77,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: none;
 
 }
 
@@ -46,7 +92,7 @@ body {
   height: 10vh;
   background: #FFFA00;
   font-size: 0.3em;
-  z-index: 20;
+  z-index: 200;
 }
 
 .left {
@@ -79,18 +125,32 @@ body {
 
 /* the big boy text */
 .textcontain {
+
+  display: flex;
+  width: 40%;
+  height: 80vh;
+  font-size: 5vw;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background: none;
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  line-height: 105%;
+  z-index: 2;
+  color: white;
+  margin-top: 10vh;
+}
+
+.bigcontain {
   display: flex;
   width: 95%;
   height: 95vh;
-  font-size: 8vw;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 500;
-  font-display: swap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 
@@ -115,9 +175,9 @@ body {
   bottom: 2.5vw;
   right: 3vw;
   z-index: 20;
-  height: 100px;
-  width: 320px;
-  font-size: 0.45em;
+  height: 80px;
+  width: 300px;
+  font-size: 0.40em;
   background: black;
   border-radius: 90px;
   border: 0px;
@@ -139,7 +199,7 @@ body {
   display: flex;
   width: 90vw;
   height: 5vh;
-  background-color: white;
+  background-color: none;
 }
 
 /* this ones gonna come back and bite me in the ass, I'm calling it here and now */
@@ -166,11 +226,11 @@ a:hover {
   transition: color 400ms;
   font-family: 'Inter';
   font-style:  normal;
-  font-weight: 500;
+  font-weight: 400;
   font-display: swap;
 }
 #bigmoney:hover {
-  color: grey;
+  color: #FFFA00;
 
 }
 
@@ -183,7 +243,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   width: 95%;
-  background: white;
+  background: none;
 
 }
 
@@ -201,12 +261,12 @@ a:hover {
   border-width: 0px;
   border-bottom-width: 1px;
   border-bottom-color: black;
-
+  margin-top: none;
 }
 
 .totheleft {
   width: 60%;
-  background-color: white;
+  background-color: none;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -221,7 +281,7 @@ a:hover {
   border-radius: 50px;
   border-color: black;
   margin-right: 1vw;
-  background: white;
+  background: none;
   font-size: 0.3em;
   font-family: 'Inter';
   font-style:  normal;
@@ -243,7 +303,7 @@ a:hover {
   border-radius: 50px;
   border-color: black;
   margin-right: 1vw;
-  background: white;
+  background: none;
   font-size: 0.3em;
   font-family: 'Inter';
   font-style:  normal;
@@ -305,7 +365,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   width: 95vw;
-  background: white;
+  background: none;
   border-style: solid;
   border-width: 0px;
   padding-bottom: 20px;
@@ -382,6 +442,16 @@ a:hover {
 }
 
 
+.x {
+  display: flex;
+  position: fixed;
+  top: 3vh;
+  right: 5vw;
+  width: 120px;
+  z-index: 120;
+}
+
+
 @media only screen and (min-width: 801px) {
   .bottom-comment {
     display: none;
@@ -415,6 +485,11 @@ a:hover {
     z-index: 100;
   }
 
+.x {
+  display: flex;
+  width: 35px;
+  z-index: 100;
+}
   .left {
     width: 25%;
     padding-left: 5%;
@@ -462,7 +537,7 @@ a:hover {
 
   /* big huh? look at you now you miserable peice of shit */
   .textcontain {
-    font-size: 60px;
+    font-size: 0px;
     width: 90%;
     line-height: 110%;
   }
@@ -479,7 +554,7 @@ a:hover {
     background: black;
     border-radius: 90px;
     border: 0px;
-    color: white;
+    color: none;
     transition: background 300ms;
     font-family: 'Inter';
     font-style:  normal;
@@ -505,12 +580,12 @@ a:hover {
     border-width: 0px;
     border-bottom-width: 1px;
     border-bottom-color: black;
-
+    margin-top: 20px;
   }
 
   .totheleft {
     width: 100%;
-    background-color: white;
+    background-color: none;
     display: flex;
     align-items: flex-start;
     flex-direction: row;
@@ -525,7 +600,7 @@ a:hover {
     border-radius: 50px;
     border-color: black;
     margin-right: 10px;
-    background: white;
+    background: none;
     font-size: 20px;
     font-family: 'Inter';
     font-style:  normal;
@@ -614,6 +689,7 @@ a:hover {
     justify-content: right;
     align-items: center;
     align-content: center;
+    z-index: 100;
   }
 
 .hidden {
@@ -626,5 +702,79 @@ a:hover {
     font-size: 60px;
     font-weight: 500;
   }
+
+  .hammybutton {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    border: none;
+
+  }
+
+  .background {
+    position: absolute;
+    display: none;
+    height: 95vh;
+    margin-bottom: 30px;
+  }
+
+  .background2 {
+    position: absolute;
+    display: flex;
+    height: 100vh;
+    margin-bottom: 30px;
+  }
+
+  .background5 {
+    margin-top: 14vh;
+    display: flex;
+    height: auto;
+    width: 90%;
+  }
+
+  .textcontain {
+
+    display: flex;
+    width: 70%;
+    height: 92vh;
+    font-size: 11vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background: none;
+    font-family: 'Inter';
+    font-style:  normal;
+    font-weight: 400;
+    font-display: swap;
+    line-height: 110%;
+    z-index: 2;
+    color: white;
+    margin-top: 9vh;
+  }
+
+  .bigcontain {
+    width: 90%;
+    height: 95vh;
+  }
+/* get rid them damn hover states */
+
+  .hammybutton:focus {
+    border: none;
+    outline: none;
+  }
+
+  a:hover {
+    color:black;
+  }
+
+  .donate:hover {
+    background:black;
+    color: white;
+  }
+
+
+
+
 
 }

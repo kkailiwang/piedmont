@@ -20,23 +20,48 @@
         </button>
       </a>
 
-      <div class="header">
-        <div class="left"><a href="index.html"><img class="logo" src="logo.svg"></a></div>
-        <div class="right">
-          <img src="hamburger.svg" class="burger"></img>
-          <div class="nav"><a href="move.html">The Mission</a></div>
-          <div class="nav">
-            <a href="calculate.html">Our Orgs</a>
-          </div>
-          <div class="nav"><a href="about.html">About Us</a></span> </div>
-        </div>
+      <div class="mobile hidden">
+        <div class="navmobile"><a href="none.html"> &nbsp </a></div>
+        <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
+        <div class="navmobile"><a href="move.html">The Mission</a></div>
+        <div class="navmobile"><a href="calculate.html">Our Orgs</a></div>
+        <div class="navmobile"><a href="about.html">About Us</a></div>
       </div>
+
+          <div class="header">
+            <div class="left"><a href="index.html"><img class="logo" src="logo.svg"></a></div>
+            <div class="right">
+              <button class="hammybutton">
+                <img src="hamburger.svg" id="burger" class="burger"></img>
+                <img src="x.svg" id="x" class="x hidden"></img>
+              </button>
+              <div class="nav"><a href="move.html">The Mission</a></div>
+              <div class="nav">
+                <a href="calculate.html">Our Orgs</a>
+              </div>
+              <div class="nav"><a href="about.html">About Us</a></span> </div>
+            </div>
+          </div>
+
+
+          <script>
+        $( "button.hammybutton" ).click(function() {
+          $( ".mobile" ).slideToggle( "slow" );
+          $( ".mobile" ).removeClass( "hidden" );
+          $( '#x' ).toggleClass( "hidden" );
+          $( '#burger' ).toggleClass( "hidden" );
+        });
+        </script>
+
+
+
 
   <div class="spacer"></div>
     <div class="spacer"></div>
       <div class="spacer"></div>
         <div class="spacer"></div>
           <div class="spacer"></div>
+
 
 
           <p class="para">POPS is a collective group of Piedmont High School Alums home from college with the desire to make change in the Piedmont community in response to the Black Lives Matter movement and the systemic racism that has plagued our country from its inception. After attending the Piedmont Protest for Black Lives on June 3rd, our team was inspired by how much of the Piedmont community came out to protest, while also left feeling like there is so much more work to be done. That’s where our idea for the POPS project came into play.  We wanted to create a Piedmont centric donation and action hub website to serve as a long-term community space
@@ -50,7 +75,9 @@ Kate Broening ‘18
 Nina Adarkar ‘17
 Jonathan Dinetz ‘18
 <br><br>
-And a special thanks to our Outreach Team:
+Technical Creators: Keri Kaili Wang and Jonathan Dinetz
+<br><br>
+Outreach Team:
 Madison Wilson
 Caroline Dunlap
 Sophie Hall
@@ -73,10 +100,10 @@ Ella Wright
 Avni Wadwani
 Merry Roberts
 Ava Bogart
-Nina Goldberg - under evaluation
+Nina Goldberg
 Shannon Landeer
 Lucy Barrett
-Gracie Ellis - under evaluation
+Gracie Ellis
 Sofia Butler
 
           </p>

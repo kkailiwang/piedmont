@@ -3,13 +3,20 @@
 <html>
   <head>
     <title>Home</title>
-    <!--<script type="text/javascript">
-      window.location.replace("comingsoon.html");
-    </script>-->
+    <script type="text/javascript">
+      // // var due = new Date("2020-06-16T19:15:00.000-07:00").getTime();
+
+      // var due = new Date("2020-06-18T18:00:00.000-07:00").getTime();
+      // var now = new Date().getTime();
+      // if (due - now > 1) {
+      //   window.location.replace("comingsoon.html");
+      // }
+
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <!-- <script src="./node_modules/axios/dist/axios.min.js"></script> -->
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <meta charset="utf-8" />
@@ -19,8 +26,6 @@
       rel="stylesheet"
     />
   </head>
-
-  <!-- API key for donorbox: ijBKAnIcBzXWv597Ff5D4KIaBFVIDbMfnWXi4AFxu1uij73Jil3JOQ -->
 
   <body>
     <a href="donate.html">
@@ -32,11 +37,13 @@
 
 
 
-<div class="mobile hidden">
-  <div class="navmobile"><a href="move.html">The Mission</a></div>
-  <div class="navmobile"><a href="move.html">Our Orgs</a></div>
-  <div class="navmobile"><a href="move.html">About Us</a></div>
-</div>
+    <div class="mobile hidden">
+      <div class="navmobile"><a href="none.html"> &nbsp </a></div>
+      <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
+      <div class="navmobile"><a href="move.html">The Mission</a></div>
+      <div class="navmobile"><a href="calculate.html">Our Orgs</a></div>
+      <div class="navmobile"><a href="about.html">About Us</a></div>
+    </div>
 
 
 
@@ -45,7 +52,8 @@
       <div class="left"><a href="index.html"><img class="logo" src="logo.svg"></a></div>
       <div class="right">
         <button class="hammybutton">
-        <img src="hamburger.svg" class="burger"></img>
+        <img src="hamburger.svg" id="burger" class="burger"></img>
+        <img src="x.svg" id="x" class="x hidden"></img>
         </button>
         <div class="nav"><a href="move.html">The Mission</a></div>
         <div class="nav">
@@ -54,21 +62,29 @@
         <div class="nav"><a href="about.html">About Us</a></span> </div>
       </div>
     </div>
+
+    <img class="background2" src="chalk2.jpg"></img>
+    <img class="background" src="chalk.jpg"></img>
     <div class="spacer"></div>
+
+    <div class="bigcontain">
     <div class="textcontain">
         <div class="maintext">
-        Piedmont has raised <span id="bigmoney">$2,035,125</span> for BLM. Care to add on?
+        Piedmont has raised <span id="bigmoney">$0</span> for BLM. Care to add on?
       </div>
     </div>
+    </div>
+
 
     <script>
   $( "button.hammybutton" ).click(function() {
     $( ".mobile" ).slideToggle( "slow" );
     $( ".mobile" ).removeClass( "hidden" );
+    $( '#x' ).toggleClass( "hidden" );
+    $( '#burger' ).toggleClass( "hidden" );
   });
   </script>
-    </script>
-    </script>
+
 
 
       <div class="topochico">
@@ -87,36 +103,18 @@
       </div>
 
       <div class="leader" id="leader-list" style="flex-direction: column">
-          <!-- <button id="authorize_button" style="display: none;">Authorize</button>
-          <button id="signout_button" style="display: none;">Sign Out</button> -->
-        <!-- <div class="rightright" style="flex-direction:column;" id="leader-list">
-
-        </div>
-        <div class="wrongwrong" id="times-list" style="flex-direction:column;">
-
-        </div> -->
-        <!-- <pre id="content" style="white-space: pre-wrap;"></pre> -->
       </div>
-
-      <!-- <script src="index.js" ></script> -->
 
       <script type="text/javascript">
 
-        //API key: AIzaSyD8JIqf1qEaiwTFKKuFYpTRsE2ek8S4oyE
-        // Client ID and API key from the Developer Console
         var CLIENT_ID = '239112592362-oogbtgit5om42erh2676hq820v6vvvue.apps.googleusercontent.com';
         var API_KEY = 'AIzaSyD8JIqf1qEaiwTFKKuFYpTRsE2ek8S4oyE'
-
         // // Array of API discovery doc URLs for APIs used by the quickstart
         var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
 
         // // Authorization scopes required by the API; multiple scopes can be
         // // included, separated by spaces.
         var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
-
-        // var authorizeButton = document.getElementById('authorize_button');
-        // var signoutButton = document.getElementById('signout_button');
-
         // /**
         //  *  On load, called to load the auth2 library and API client library.
         //  */
@@ -157,40 +155,38 @@
           let rows = res.data.values;
           //example of a row:
           // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE", "comment goes here"]
-          console.log(rows);
 
           rows = rows.map(row => {
             let day = new Date(row[DATE]);
             let anon = row[ANONYMOUS] === "TRUE" ? true : false;
+
             let newRow = row;
+            if (anon) {
+              newRow[FIRST_NAME] = "Anonymous";
+              newRow[LAST_NAME] = "";
+            }
             newRow[AMOUNT] = Number(row[AMOUNT].substring(1));
             newRow[DATE] = day;
             newRow[ANONYMOUS] = anon;
-            // console.log(row[COMMENT]);
             newRow[COMMENT] = row[COMMENT] == undefined ? "" : row[COMMENT];
             return newRow;
           });
 
           //now, rows would be like ["6911336", "Kaili", "Wang", 6.00, Date object, false]
 
-          // const leaders = document.getElementById("leader-list");
           const leaders = $('#leader-list');
-          // let dateList = document.getElementById("times-list");
 
           const mostRecentButton = $("#most-recent-btn");
           const highestDonationsButton = $("#highest-donation-btn");
+          const search = $('#fname');
 
-          // console.log(leaders);
+          let highFilterOn = true;
 
           const displayLeaders = (arr) => {
             arr.map(function (row, i) {
-              // let leader = document.createElement("div");
-              // let donation = document.createElement("div");
-              const name = row[ANONYMOUS]  ? "Anonymous" : `${row[FIRST_NAME]} ${row[LAST_NAME]}`;
+              const name = `${row[FIRST_NAME]} ${row[LAST_NAME]}`
+              // const name = row[ANONYMOUS]  ? "Anonymous" : `${row[FIRST_NAME]} ${row[LAST_NAME]}`;
               let donation = `<div class="donation-elem"><span id="amount">$${row[3]} </span> by <span id="richfuck"> ${name}</span></div>`;
-              // leader.append(donation);
-
-              // let date = document.createElement("div");
               let comment = `<div class="middle-comment"> ${row[COMMENT]}</div>`;
               let commentBottom = `<div class="bottom-comment"> ${row[COMMENT]}</div>`;
 
@@ -202,19 +198,6 @@
               let date = `<div><span class="date-elem">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span></div>`;
               let leader = `<div class="leader-elem">${donation}${comment}${date}</div>`;
 
-
-              // leader.style.display = 'flex';
-              // leader.style.flexDirection = 'row';
-              // leader.style.width = '100%';
-              // leader.style.paddingTop = '20px';
-              // leader.style.paddingBottom = '20px';
-              // leader.style.borderBottomStyle = 'solid';
-              // leader.style.borderWidth = '1px';
-              // leader.style.justifyContent = 'space-between'
-              // leader.style.fontSize = '0.3em';
-
-
-
               /*
               leader div
               ----------------------------------------------------
@@ -224,40 +207,52 @@
               ----------------------------------------------------
               */
 
-              // leader.appendChild(date);
               leaders.append(leader, commentBottom);
             });
           }
-
-          mostRecentButton.on('click',  () => {
+          const displayRecent = () => {
+            highFilterOn = false;
             highestDonationsButton.removeClass('active-filter');
             mostRecentButton.addClass('active-filter');
-            // leaders.innerHTML = ""; //clears table
+            search.val("");
             leaders.html("");
             let newRows = rows.sort((a, b) => {
               return b[DATE] - a[DATE];
-              //  if (a[DATE] > b[DATE]) return -1;
-              //  if (a[DATE] == b[DATE]) return 0;
             });
-            console.log(newRows);
+            // console.log(newRows);
             displayLeaders(rows.slice(0, 30));
-          });
+          };
+
+          mostRecentButton.on('click',  displayRecent);
 
           const displayHighest = () => {
+            highFilterOn = true;
             highestDonationsButton.addClass('active-filter');
             mostRecentButton.removeClass('active-filter');
-            // leaders.innerHTML = "";
+            search.val("");
             leaders.html("");
             let newRows = rows.sort((a, b) => b[AMOUNT] - a[AMOUNT]);
             console.log(newRows);
             displayLeaders(rows.slice(0, 30));
           }
 
-          // highestDonationsButton.onclick = displayHighest;
           highestDonationsButton.on('click', displayHighest);
           //default
-          // displayHighest();
           highestDonationsButton.click();
+
+          // SEARCHING
+
+          search.on('input', e => {
+            const keyword = e.target.value.toLowerCase();
+            const filtered = rows.filter(row => {
+            return row[FIRST_NAME].toLowerCase().indexOf(keyword) >= 0 || row[LAST_NAME].toLowerCase().indexOf(keyword) >= 0;
+            });
+            console.log(filtered);
+            //keep track of which filter is used, then display
+            leaders.html("");
+            //rows should already be sorted correctly.
+            displayLeaders(filtered.slice(0, 30));
+          })
 
 
         })
@@ -276,12 +271,16 @@
           console.log(e);
         });
 
+
+
       </script>
 
       <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
       </script>
+
+
 
 
 

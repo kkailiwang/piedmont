@@ -20,22 +20,44 @@
         </button>
       </a>
 
-      <div class="header">
-        <div class="left"><a href="index.html"><img class="logo" src="logo.svg"></a></div>
-        <div class="right">
-          <img src="hamburger.svg" class="burger"></img>
-          <div class="nav"><a href="move.html">The Mission</a></div>
-          <div class="nav">
-            <a href="calculate.html">Our Orgs</a>
-          </div>
-          <div class="nav"><a href="about.html">About Us</a></span> </div>
-        </div>
+      <div class="mobile hidden">
+        <div class="navmobile"><a href="none.html"> &nbsp </a></div>
+        <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
+        <div class="navmobile"><a href="move.html">The Mission</a></div>
+        <div class="navmobile"><a href="calculate.html">Our Orgs</a></div>
+        <div class="navmobile"><a href="about.html">About Us</a></div>
       </div>
-  <div class="spacer"></div>
-    <div class="spacer"></div>
-      <div class="spacer"></div>
-        <div class="spacer"></div>
-          <div class="spacer"></div>
+          <div class="header">
+            <div class="left"><a href="index.html"><img class="logo" src="logo.svg"></a></div>
+            <div class="right">
+              <button class="hammybutton">
+                <img src="hamburger.svg" id="burger" class="burger"></img>
+                <img src="x.svg" id="x" class="x hidden"></img>
+              </button>
+              <div class="nav"><a href="move.html">The Mission</a></div>
+              <div class="nav">
+                <a href="calculate.html">Our Orgs</a>
+              </div>
+              <div class="nav"><a href="about.html">About Us</a></span> </div>
+            </div>
+          </div>
+
+
+
+          <script>
+        $( "button.hammybutton" ).click(function() {
+          $( ".mobile" ).slideToggle( "slow" );
+          $( ".mobile" ).removeClass( "hidden" );
+          $( '#x' ).toggleClass( "hidden" );
+          $( '#burger' ).toggleClass( "hidden" );
+        });
+        </script>
+
+
+
+
+
+<img class="background5" src="yellow.png"></img>
 
 <p class="para">We’ve been amazed to see the outpouring of donations from youth to support organizations in the Black Lives Matter movement—but this movement cannot be supported by youth alone.
 <br><br>
