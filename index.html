@@ -31,10 +31,22 @@
 
 
 
+
+<div class="mobile hidden">
+  <div class="navmobile"><a href="move.html">The Mission</a></div>
+  <div class="navmobile"><a href="move.html">Our Orgs</a></div>
+  <div class="navmobile"><a href="move.html">About Us</a></div>
+</div>
+
+
+
+
     <div class="header">
       <div class="left"><a href="index.html"><img class="logo" src="logo.svg"></a></div>
       <div class="right">
+        <button class="hammybutton">
         <img src="hamburger.svg" class="burger"></img>
+        </button>
         <div class="nav"><a href="move.html">The Mission</a></div>
         <div class="nav">
           <a href="calculate.html">Our Orgs</a>
@@ -49,6 +61,14 @@
       </div>
     </div>
 
+    <script>
+  $( "button.hammybutton" ).click(function() {
+    $( ".mobile" ).slideToggle( "slow" );
+    $( ".mobile" ).removeClass( "hidden" );
+  });
+  </script>
+    </script>
+    </script>
 
 
       <div class="topochico">
@@ -262,6 +282,10 @@
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
       </script>
+
+
+
+
     </div>
   </body>
 </html>

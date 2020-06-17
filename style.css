@@ -68,7 +68,6 @@ body {
   padding-right: 2em;
   display: flex;
   align-items: center;
-  align-content: flex-end;
   justify-content: flex-end;
 }
 
@@ -100,13 +99,13 @@ body {
 .para {
   display: block;
   width: 95%;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .parabold {
   display: block;
   width: 95%;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 500;
 }
 
@@ -400,6 +399,11 @@ a:hover {
     padding: 20 20 0 0;
   }
 
+  .mobile {
+    display: none;
+
+  }
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -594,8 +598,33 @@ a:hover {
   }
 
   .parabold {
+    display: block;
     width: 90%;
     font-size: 30px;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 90%;
+    padding: 5%;
+    background-color: #FFFA00;
+    justify-content: right;
+    align-items: center;
+    align-content: center;
+  }
+
+.hidden {
+  display: none;
+}
+
+
+  .navmobile {
+    display: flex;
+    font-size: 60px;
+    font-weight: 500;
   }
 
 }
