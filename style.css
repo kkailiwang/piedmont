@@ -484,17 +484,32 @@ a:hover {
 
 .mayasface {
   display: grid;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows:1fr 1fr;
-  width: 95%;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 1.5vw;
 }
 
-.square {
 
-  height: 300px;
+.square {
+  height: 30.5vw;
+  width: 30.5vw;
+  object-fit: cover;
+
+}
+
+.innertext {
+  font-family: 'Inter';
+  position: relative;
+  top:90px;
+  left: 30px;
+  color: white;
+  font-size: 50px;
+}
+
+.video {
+  display: flex;
   width: 95%;
-  background: black;
+  height: 90vh;
 }
 
 @media only screen and (min-width: 876px) {
@@ -524,6 +539,13 @@ a:hover {
 @media only screen and (max-width: 875px) {
 /* up top */
 
+
+.video {
+  display: flex;
+  width: 90%;
+  height: 90vh;
+}
+
   .burger {
     display: flex;
     width: 35px;
@@ -548,6 +570,29 @@ a:hover {
     display: none;
     padding-bottom: 0px;
     /* visibility: hidden; */
+  }
+
+  .mayasface {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-gap: 4vw;
+  }
+
+  .innertext {
+    font-family: 'Inter';
+    position: relative;
+    top:60px;
+    left: 30px;
+    color: white;
+    font-size: 30px;
+  }
+
+
+  .square {
+    height: 89vw;
+    width: 89vw;
+    object-fit: cover;
   }
 
   .leader {
