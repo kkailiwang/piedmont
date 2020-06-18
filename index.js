@@ -58,7 +58,10 @@ axios
     // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE", "comment goes here"]
 
     rows = rows.map(row => {
-      let day = new Date(row[DATE].replace(' ', 'T'));
+      // console.log(row[DATE].replace(' ', 'T'))
+      const dateString = row[DATE].length < 19 ? row[DATE].replace(' ', 'T0') : row[DATE].replace(' ', 'T');
+      let day = new Date(dateString);
+      // console.log(day);
       let anon = row[ANONYMOUS] === "TRUE" ? true : false;
 
       let newRow = row;
@@ -95,8 +98,8 @@ axios
         // you can do date.style._styleprop_ = 'propertyvalue'; like i did below with leader
 
         let day = row[DATE];
-        // console.log(day);
-        let date = `<div><span class="date-elem">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span></div>`;
+        console.log(day);
+        let date = `<div><span class="date-elem">${day.getMonth() + 1}/${day.getDate()}/${day.getFullYear()}</span></div>`;
         let leader = `<div class="leader-elem">${donation}${comment}${date}</div>`;
 
         /*
