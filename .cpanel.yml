@@ -3,6 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home2/popsproj/public_html/
     - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R index.js $DEPLOYPATH
     - /bin/cp -R comingsoon.html $DEPLOYPATH
     - /bin/cp -R comingsoon.css $DEPLOYPATH
     - /bin/cp -R style.css $DEPLOYPATH
@@ -15,3 +16,8 @@ deployment:
     - /bin/cp -R donate.html $DEPLOYPATH
     - /bin/cp -R move.html $DEPLOYPATH
     - /bin/cp -R about.html $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R inter.css $DEPLOYPATH
+    - /bin/cp -R lottie.js $DEPLOYPATH
+    - /bin/cp -R community.html $DEPLOYPATH
+    - /bin/cp -R calculate.html $DEPLOYPATH
