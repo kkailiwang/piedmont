@@ -482,6 +482,18 @@ a:hover {
   z-index: 120;
 }
 
+.mayasface {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 95%;
+
+}
+
+.square {
+  height: 300px;
+  width: 300px;
+  background: black;
+}
 
 @media only screen and (min-width: 876px) {
   .bottom-comment {
