@@ -1,40 +1,38 @@
-var CLIENT_ID =
-  "239112592362-oogbtgit5om42erh2676hq820v6vvvue.apps.googleusercontent.com";
-var API_KEY = "AIzaSyD8JIqf1qEaiwTFKKuFYpTRsE2ek8S4oyE";
+var  API_KEY = "AIzaSyAmf1gfYTBtfs7M_PC0cAjGgkQk8SXo6mA";
 // // Array of API discovery doc URLs for APIs used by the quickstart
-var DISCOVERY_DOCS = [
-  "https://sheets.googleapis.com/$discovery/rest?version=v4"
-];
+// var DISCOVERY_DOCS = [
+//   "https://sheets.googleapis.com/$discovery/rest?version=v4"
+// ];
 
-// // Authorization scopes required by the API; multiple scopes can be
-// // included, separated by spaces.
-var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
-// /**
-//  *  On load, called to load the auth2 library and API client library.
-//  */
-function handleClientLoad() {
-  gapi.load("client:auth2", initClient);
-}
+// // // Authorization scopes required by the API; multiple scopes can be
+// // // included, separated by spaces.
+// var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+// // /**
+// //  *  On load, called to load the auth2 library and API client library.
+// //  */
+// function handleClientLoad() {
+//   gapi.load("client:auth2", initClient);
+// }
 
 // /**
 //  *  Initializes the API client library and sets up sign-in state
 //  *  listeners.
 //  */
-function initClient() {
-  gapi.client
-    .init({
-      apiKey: API_KEY,
-      clientId: CLIENT_ID,
-      discoveryDocs: DISCOVERY_DOCS,
-      scope: SCOPES
-    })
-    .then(
-      function() {},
-      function(error) {
-        console.log(error);
-      }
-    );
-}
+// function initClient() {
+//   gapi.client
+//     .init({
+//       apiKey: API_KEY,
+//       clientId: CLIENT_ID,
+//       discoveryDocs: DISCOVERY_DOCS,
+//       scope: SCOPES
+//     })
+//     .then(
+//       function() {},
+//       function(error) {
+//         console.log(error);
+//       }
+//     );
+// }
 
 const base =
   "https://sheets.googleapis.com/v4/spreadsheets/11QHV5h0HGR1zfSQ3QpzztlTQkWm-GyK8H-IqT_zuvew/values/";
