@@ -125,7 +125,6 @@ body {
 
 /* the big boy text */
 .textcontain {
-
   display: flex;
   width: 40%;
   height: 80vh;
@@ -169,6 +168,12 @@ body {
   font-weight: 500;
 }
 
+.linky {
+  text-decoration:underline;
+
+  font-weight: 400;
+}
+
 /* the button of all buttons, button to the stars, big kahuna button */
 .donate {
   position: fixed;
@@ -192,6 +197,12 @@ body {
 .donate:hover{
   background: #FFFA00;
   color: black;
+}
+
+
+.donate:focus{
+  border: none;
+  outline: none;
 }
 
 /* hey babe, all divs need to take some space from time to time */
@@ -296,6 +307,12 @@ a:hover {
 }
 
 
+.most:focus{
+  border: none;
+  outline: none;
+}
+
+
 .highest {
   height: 60px;
   width: 250px;
@@ -310,6 +327,10 @@ a:hover {
   font-weight: 400;
   font-display: swap;
   transition: background 200ms;
+}
+
+.highest:focus{
+    outline: none;
 }
 
 /* .highest:hover{
@@ -337,6 +358,11 @@ a:hover {
   color: black;
 }
 
+
+.search:focus{
+  outline: none;
+}
+
 .seek{
   height: 60px;
   width: 60px;
@@ -344,6 +370,11 @@ a:hover {
   border-width: 0px;
   background: black;
   transition: background 200ms;
+}
+
+
+.seek:focus{
+  outline: none;
 }
 
 .seek:hover{
@@ -452,7 +483,7 @@ a:hover {
 }
 
 
-@media only screen and (min-width: 801px) {
+@media only screen and (min-width: 876px) {
   .bottom-comment {
     display: none;
 
@@ -476,7 +507,7 @@ a:hover {
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 875px) {
 /* up top */
 
   .burger {
