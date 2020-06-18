@@ -175,6 +175,8 @@ axios
       // console.log(row[DATE].replace(' ', 'T'))
       const dateString = row[DATE].length < 19 ? row[DATE].replace(' ', 'T0') : row[DATE].replace(' ', 'T');
       let day = new Date(dateString);
+      var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+      if (iOS) day.setDate(day.getDate() + 1);
       // console.log(day);
       let anon = row[ANONYMOUS] === "TRUE" ? true : false;
 
@@ -214,8 +216,7 @@ axios
         let day = row[DATE];
         console.log(day);
         console.log(day.getDate())
-        var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-        if (iOS) day.setDate(day.getDate() + 1);
+        
         let date = `<div><span class="date-elem">${day.getMonth() + 1}/${day.getDate()}/${day.getFullYear()}</span></div>`;
         let leader = `<div class="leader-elem">${donation}${comment}${date}</div>`;
 
