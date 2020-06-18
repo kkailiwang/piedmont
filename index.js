@@ -1,49 +1,177 @@
-// import axios from 'axios';
-// require('babel-polyfill');
+var CLIENT_ID =
+  "239112592362-oogbtgit5om42erh2676hq820v6vvvue.apps.googleusercontent.com";
+var API_KEY = "AIzaSyD8JIqf1qEaiwTFKKuFYpTRsE2ek8S4oyE";
+// // Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = [
+  "https://sheets.googleapis.com/$discovery/rest?version=v4"
+];
 
-const username = 'https://mayaguzdar@gmail.com';
-const donorboxApi = 'm4aZVnvnmiDM_KFJndoLBU-quNstCQJRcx8HljU5yaia0GLaMjyjtg';
-const BASE_URL = 'https://mayaguzdar%40gmail.com:' + donorboxApi + '@donorbox.org/api/v1';
-const noApi = 'https://donorbox.org/api/v1';
-var headers = new Headers();
+// // Authorization scopes required by the API; multiple scopes can be
+// // included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+// /**
+//  *  On load, called to load the auth2 library and API client library.
+//  */
+function handleClientLoad() {
+  gapi.load("client:auth2", initClient);
+}
 
-headers.append('Authorization', 'Basic ' + btoa(username + ':' + donorboxApi));
-
-const getCampaign = () => {
-  try {
-    // axios.get(`${BASE_URL}/campaigns`).then(res => {
-    //     const campaigns = res.data;
-    //     console.log(`GET: Here's the list of campaigns`, campaigns);
-    //     return campaigns;
-    // }).catch( err => {
-    //     console.log(err);
-    // });
-
-    fetch(noApi + '/campaigns', {headers: headers}).then( res => {
-        console.log(res.data);
+// /**
+//  *  Initializes the API client library and sets up sign-in state
+//  *  listeners.
+//  */
+function initClient() {
+  gapi.client
+    .init({
+      apiKey: API_KEY,
+      clientId: CLIENT_ID,
+      discoveryDocs: DISCOVERY_DOCS,
+      scope: SCOPES
     })
+    .then(
+      function() {},
+      function(error) {
+        console.log(error);
+      }
+    );
+}
 
-    // var xmlHttp = new XMLHttpRequest();
-    // xmlHttp.open( "GET", BASE_URL+'/campaigns', false, 'mayaguzdar@gmail.com', donorboxApi ); // false for synchronous request
-    // xmlHttp.send( null );
-    // console.log(xmlHttp.responseText);
+const base =
+  "https://sheets.googleapis.com/v4/spreadsheets/11QHV5h0HGR1zfSQ3QpzztlTQkWm-GyK8H-IqT_zuvew/values/";
 
-    
+// ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE"]
+//define the index constants
+const FIRST_NAME = 1;
+const LAST_NAME = 2;
+const AMOUNT = 3;
+const DATE = 4;
+const ANONYMOUS = 5;
+const COMMENT = 6;
 
+//for leaderboard
+const donationsRange = "Donors!B2:H?key=";
+axios
+  .get(base + donationsRange + API_KEY)
+  .then(res => {
+    let rows = res.data.values;
+    //example of a row:
+    // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE", "comment goes here"]
 
-  } catch (e) {
-    console.error(e);
-  }
-};
+    rows = rows.map(row => {
+      let day = new Date(row[DATE]);
+      let anon = row[ANONYMOUS] === "TRUE" ? true : false;
 
-const main = () => {
-    getCampaign();
-};
+      let newRow = row;
+      if (anon) {
+        newRow[FIRST_NAME] = "Anonymous";
+        newRow[LAST_NAME] = "";
+      }
+      newRow[AMOUNT] = Number(row[AMOUNT].substring(1));
+      newRow[DATE] = day;
+      newRow[ANONYMOUS] = anon;
+      newRow[COMMENT] = row[COMMENT] == undefined ? "" : row[COMMENT];
+      return newRow;
+    });
 
-main();
+    //now, rows would be like ["6911336", "Kaili", "Wang", 6.00, Date object, false]
 
-//google sheet api client: 239112592362-oogbtgit5om42erh2676hq820v6vvvue.apps.googleusercontent.com
+    const leaders = $("#leader-list");
 
-//client secret: vHExiF9Jqoa2wrPU4UjV3GUs
+    const mostRecentButton = $("#most-recent-btn");
+    const highestDonationsButton = $("#highest-donation-btn");
+    const search = $("#fname");
 
-//api key: AIzaSyCoB7rCCVBJeAKwSMrWgRB0U6Hb7-pAxg4
+    let highFilterOn = true;
+
+    const displayLeaders = arr => {
+      arr.map(function(row, i) {
+        const name = `${row[FIRST_NAME]} ${row[LAST_NAME]}`;
+        // const name = row[ANONYMOUS]  ? "Anonymous" : `${row[FIRST_NAME]} ${row[LAST_NAME]}`;
+        let donation = `<div class="donation-elem"><span id="amount">$${row[3]} </span> by <span id="richfuck"> ${name}</span></div>`;
+        let comment = `<div class="middle-comment"> ${row[COMMENT]}</div>`;
+        let commentBottom = `<div class="bottom-comment"> ${row[COMMENT]}</div>`;
+
+        //Jono:
+        // you can do date.style._styleprop_ = 'propertyvalue'; like i did below with leader
+
+        let day = row[DATE];
+        // console.log(day);
+        let date = `<div><span class="date-elem">${day.getMonth()}/${day.getDate()}/${day.getFullYear()}</span></div>`;
+        let leader = `<div class="leader-elem">${donation}${comment}${date}</div>`;
+
+        /*
+              leader div
+              ----------------------------------------------------
+              | donation div                             date div |
+              | |^^^^^^^^^^^^|                           |^^^^^^^||
+              |  ^^^^^^^^^^^^                             ^^^^^^^ |
+              ----------------------------------------------------
+              */
+
+        leaders.append(leader, commentBottom);
+      });
+    };
+    const displayRecent = () => {
+      highFilterOn = false;
+      highestDonationsButton.removeClass("active-filter");
+      mostRecentButton.addClass("active-filter");
+      search.val("");
+      leaders.html("");
+      let newRows = rows.sort((a, b) => {
+        return b[DATE] - a[DATE];
+      });
+      // console.log(newRows);
+      displayLeaders(rows.slice(0, 30));
+    };
+
+    mostRecentButton.on("click", displayRecent);
+
+    const displayHighest = () => {
+      highFilterOn = true;
+      highestDonationsButton.addClass("active-filter");
+      mostRecentButton.removeClass("active-filter");
+      search.val("");
+      leaders.html("");
+      let newRows = rows.sort((a, b) => b[AMOUNT] - a[AMOUNT]);
+      console.log(newRows);
+      displayLeaders(rows.slice(0, 30));
+    };
+
+    highestDonationsButton.on("click", displayHighest);
+    //default
+    highestDonationsButton.click();
+
+    // SEARCHING
+
+    search.on("input", e => {
+      const keyword = e.target.value.toLowerCase();
+      const filtered = rows.filter(row => {
+        return (
+          row[FIRST_NAME].toLowerCase().indexOf(keyword) >= 0 ||
+          row[LAST_NAME].toLowerCase().indexOf(keyword) >= 0 ||
+          `${row[FIRST_NAME]} ${row[LAST_NAME]}`.toLowerCase().indexOf(keyword) >= 0
+        );
+      });
+      console.log(filtered);
+      //keep track of which filter is used, then display
+      leaders.html("");
+      //rows should already be sorted correctly.
+      displayLeaders(filtered.slice(0, 30));
+    });
+  })
+  .catch(e => {
+    console.log(e);
+  });
+
+//updating the total amount
+const totalRange = "Main!A2?key=";
+axios
+  .get(base + totalRange + API_KEY)
+  .then(res => {
+    const total = res.data.values[0];
+    console.log(res.data.values[0]);
+    document.getElementById("bigmoney").innerHTML = total;
+  })
+  .catch(e => {
+    console.log(e);
+  });
