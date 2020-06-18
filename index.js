@@ -99,6 +99,9 @@ axios
 
         let day = row[DATE];
         console.log(day);
+        console.log(day.getDate())
+        var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        if (iOS) day.setDate(date.getDate() + 1);
         let date = `<div><span class="date-elem">${day.getMonth() + 1}/${day.getDate()}/${day.getFullYear()}</span></div>`;
         let leader = `<div class="leader-elem">${donation}${comment}${date}</div>`;
 
