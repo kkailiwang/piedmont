@@ -258,6 +258,17 @@ a:hover {
 
 }
 
+.donorbox-note {
+  font-size: 0.3em;
+  color: grey;
+}
+
+.note {
+  font-size: 0.3em;
+  width: 95%;
+  color: grey;
+}
+
 /* top of the pops: filters for leaderboard*/
 
 .topochico{
