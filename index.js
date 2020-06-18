@@ -58,7 +58,7 @@ axios
     // ["6911336", "Kaili", "Wang", "$6.00", "2020-06-11 2:00:00", "FALSE", "comment goes here"]
 
     rows = rows.map(row => {
-      let day = new Date(row[DATE]);
+      let day = new Date(row[DATE].replace(' ', 'T'));
       let anon = row[ANONYMOUS] === "TRUE" ? true : false;
 
       let newRow = row;
