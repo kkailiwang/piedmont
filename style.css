@@ -500,16 +500,17 @@ a:hover {
 .innertext {
   font-family: 'Inter';
   position: relative;
-  top:90px;
+  top:70px;
   left: 30px;
   color: white;
-  font-size: 50px;
+  font-weight: 500;
+  font-size: 30px;
 }
 
 .video {
   display: flex;
   width: 95%;
-  height: 90vh;
+  height: 80vh;
 }
 
 @media only screen and (min-width: 876px) {
@@ -543,7 +544,7 @@ a:hover {
 .video {
   display: flex;
   width: 90%;
-  height: 90vh;
+  height: 50vh;
 }
 
   .burger {
