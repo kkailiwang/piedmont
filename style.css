@@ -484,14 +484,16 @@ a:hover {
 
 .mayasface {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr;
   width: 95%;
-
 }
 
 .square {
+
   height: 300px;
-  width: 300px;
+  width: 95%;
   background: black;
 }
 
