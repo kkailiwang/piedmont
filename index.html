@@ -185,7 +185,7 @@ axios
         newRow[FIRST_NAME] = "Anonymous";
         newRow[LAST_NAME] = "";
       }
-      newRow[AMOUNT] = Number(row[AMOUNT].substring(1));
+      newRow[AMOUNT] = Number(row[AMOUNT]);
       newRow[DATE] = day;
       newRow[ANONYMOUS] = anon;
       newRow[COMMENT] = row[COMMENT] == undefined ? "" : row[COMMENT];
