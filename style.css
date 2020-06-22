@@ -158,13 +158,13 @@ body {
 .para {
   display: block;
   width: 95%;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .parabold {
   display: block;
   width: 95%;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 500;
 }
 
@@ -259,6 +259,10 @@ a:hover {
 }
 
 .donorbox-note {
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  width: 90%;
   font-size: 0.3em;
   color: grey;
 }
@@ -779,6 +783,7 @@ a:hover {
     width: 90%;
     font-size: 25px;
   }
+
 
   .mobile {
     display: flex;
