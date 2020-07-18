@@ -487,7 +487,6 @@ a:hover {
   z-index: 100;
 }
 
-
 .x {
   display: flex;
   position: fixed;
@@ -880,8 +879,22 @@ a:hover {
     color: white;
   }
 
+  .donorbox-note {
+    display: flex;
+    width: 90%;
+    font-size: 10px;
+    color: grey;
+  }
 
-
+.done {
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90vw;
+  background: none;
+}
 
 
 }
