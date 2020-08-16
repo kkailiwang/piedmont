@@ -105,8 +105,8 @@ body {
 }
 
 .logo {
-  height: 50px;
-  width: 120px;
+  height: 3.5vh;
+  width: auto;
 }
 
 .right {
@@ -261,8 +261,9 @@ a:hover {
 .donorbox-note {
   display: flex;
   position: absolute;
+  left: 2.5vw;
   bottom: 50px;
-  width: 90%;
+  width: 50%;
   font-size: 0.3em;
   color: grey;
 }
@@ -445,6 +446,16 @@ a:hover {
   width: 100%;
   font-size: 0.3em;
   padding-bottom: 20px;
+}
+
+.solike {
+  display: flex;
+  position: absolute;
+  top: 32vh;
+  left: 2.5vw;
+  max-width: 1500px;
+  width: 97.5vw;
+  font-size: 80px;
 
 }
 
@@ -479,19 +490,15 @@ a:hover {
 
 
 .burger {
-  display: none;
+  display: flex;
   position: fixed;
-  top: 3vh;
-  right: 5vw;
   width: 100px;
-  z-index: 100;
+  z-index: 120;
 }
 
 .x {
   display: flex;
   position: fixed;
-  top: 3vh;
-  right: 5vw;
   width: 120px;
   z-index: 120;
 }
@@ -554,7 +561,15 @@ a:hover {
 @media only screen and (max-width: 875px) {
 /* up top */
 
-
+.logo {
+  height: 4.5vh;
+  width: auto;
+}
+.solike {
+  font-size: 40px;
+  left: 5vw;
+  width: 90vw;
+}
 .video {
   display: flex;
   width: 90%;
@@ -811,8 +826,7 @@ a:hover {
 
   .hammybutton {
     display: flex;
-    height: 50px;
-    width: 50px;
+    align-items: center;
     background: transparent;
     border: none;
 
@@ -881,6 +895,7 @@ a:hover {
 
   .donorbox-note {
     display: flex;
+    left: 5vw;
     width: 90%;
     font-size: 10px;
     color: grey;

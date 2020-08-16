@@ -1,8 +1,9 @@
 <html>
+
 <head>
   <title>Calculate</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-  <link rel= "stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.4.1.js"> </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,62 +15,111 @@
 
 <body>
 
-    <a href="donate.html#donate">
-        <button class="donate">
-          Donate Now
-        </button>
-      </a>
+  <a href="donate.html#donate">
+    <button class="donate">
+      Donate Now
+    </button>
+  </a>
 
-      <div class="mobile hidden">
-        <div class="navmobile"><a href="none.html"> &nbsp </a></div>
-        <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
-        <div class="navmobile"><a href="move.html">The Mission</a></div>
-  <div class="navmobile"><a href="calculate.html">The Orgs</a></div>
-  <div class="navmobile"><a href="community.html">Resources</a></div>
-  <div class="navmobile"><a href="about.html">About Us</a></div>
+  <div class="mobile hidden">
+    <div class="navmobile"><a href="none.html"> &nbsp </a></div>
+    <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
+    <div class="navmobile"><a href="move.html">The Mission</a></div>
+    <div class="navmobile"><a href="calculate.html">The Orgs</a></div>
+    <div class="navmobile"><a href="community.html">Resources</a></div>
+    <div class="navmobile"><a href="about.html">About Us</a></div>
+  </div>
+
+  <div class="header">
+    <div class="left"><a href="index.html"><img class="logo" src="images/logo.png"></a></div>
+    <div class="right">
+      <button class="hammybutton">
+        <img src="images/hamburger.svg" id="burger" class="burger"></img>
+        <img src="images/x.svg" id="x" class="x hidden"></img>
+      </button>
+      <div class="nav"><a href="move.html">The Mission</a></div>
+      <div class="nav">
+        <a href="calculate.html">The Orgs</a>
       </div>
-
-          <div class="header">
-            <div class="left"><a href="index.html"><img class="logo" src="images/logo.svg"></a></div>
-            <div class="right">
-              <button class="hammybutton">
-                <img src="images/hamburger.svg" id="burger" class="burger"></img>
-                <img src="images/x.svg" id="x" class="x hidden"></img>
-              </button>
-              <div class="nav"><a href="move.html">The Mission</a></div>
-              <div class="nav">
-                <a href="calculate.html">The Orgs</a>
-              </div>
-              <div class="nav"><a href="community.html">Resources</a></span></div>
-              <div class="nav"><a href="about.html">About Us</a></span> </div>
-            </div>
-          </div>
+      <div class="nav"><a href="community.html">Resources</a></span></div>
+      <div class="nav"><a href="about.html">About Us</a></span> </div>
+    </div>
+  </div>
 
 
-          <script>
-        $( "button.hammybutton" ).click(function() {
-          $( ".mobile" ).slideToggle( "slow" );
-          $( ".mobile" ).removeClass( "hidden" );
-          $( '#x' ).toggleClass( "hidden" );
-          $( '#burger' ).toggleClass( "hidden" );
-        });
-          </script>
+  <script>
+    $("button.hammybutton").click(function () {
+      $(".mobile").slideToggle("slow");
+      $(".mobile").removeClass("hidden");
+      $('#x').toggleClass("hidden");
+      $('#burger').toggleClass("hidden");
+    });
+  </script>
 
 
 
+  <img class="background3" src="images/kids4.jpg"></img>
+  <p class='para'> <span class="parabold"><a href="https://www.oaklandedfund.org/programs/atoz/">The A to Z
+        Fund</a></span><br>The A to Z Fund provides Oakland Public Schools teachers with extra training
+    and distributes money to educators to use for field trips, music, sports, and other underfunded opportunities from A
+    to Z. Now, with distanced learning, the A to Z is funding supplies to help kids continue to learn at home (science
+    kits, books, etc.) or through their computers, PPE for teachers, and school supplies. The organization also
+    distributes more money to schools with the most students who are low-income, English language learners, or in foster
+    care. Since 2017 The A to Z Fund has awarded almost $450,000 in A to Z Fund grants to more than 300 Oakland public
+    school educators.
+  </p>
 
-        <img class="background3" src="images/meeting.jpg"></img>
-        <p class='para'> <span class="parabold"><a href="https://www.stateofblackeducation.com/about-us">State of Black Education Oakland </a></span><br>State of Black Education’s mission is to create equitable space to reflect on Oakland’s Black community’s experiences with education in order to create and advocate for informed policy demands. Current efforts include pushing for more Black educators in Oakland schools, raising awareness of the fact that most Black graduates in OUSD do not meet A-G requirements for 4-year universities, and urging the district to use excess property to help house teachers who cannot afford to live in Oakland. Past campaigns include the Opportunity Ticket, through which the organization helped pass a policy that gives priority to parents to select the school of their choice if their school happens to close down.
-        </p>
+  <img class="background4" src="images/kids5.png"></img>
+  <p class='para'> <span class="parabold"><a href="https://oaklandreach.org/">The Oakland
+        REACH</a></span><br>The Oakland REACH is a grassroots, parent-led organization committed to empowering black and
+    brown families from underserved public schools. Through mobilized outreach, school enrollment support, family
+    advocacy fellowships and interpersonal connections, The Oakland REACH hopes to equip the next generation of OUSD
+    students with a higher quality education. In light of COVID and the national health crisis, The Oakland Reach is
+    planning to launch it’s biggest, boldest initiative yet: a city-wide “Virtual Hub,” where students can access online
+    educational tools from a central website.
 
-            <img class="background4" src="images/veggie.jpg"></img>
-            <p class='para'> <span class="parabold"><a href="https://plantingjustice.org/food-justice-education">Planting Justice</a></span><br>The Planting Justice Education Program activates people most directly impacted by poverty and food injustice to create a more local and sustainable food system by developing their skills in ecological design, nutrition education, and multimedia arts. The work of the Education program takes place at high schools in East Oakland. Planting Justice hires staff directly from the communities they serve, and develops important mentorship opportunities with our students through consistent weekly programming. Planting Justice Educators and community allies have developed the Plant! Cook! Organize! curriculum, available online soon.
-            </p>
+    The city wide virtual hub is a Google Classroom platform to provide families of early elementary students with
+    supports for immediate needs to survive this period. The pilot phase of the Hub consisted of a 5-week summer program
+    with 180 students, taught by 14 teachers. If this Hub existed in the physical world, it would be that “one-stop
+    place and space” that provides both academic and other wrap-around resource support that is for and about uplifting
+    the whole family.
 
-            <img class="background4" src="images/car.jpg"></img>
-            <p class='para'>
-            <span class="parabold"><a href="http://blackorganizingproject.org/our-work/">Black Organizing Project</a></span><br>Black Organizing Project is a Black member-led community organization reviving the spirit of Oakland’s Black community through relationship building, leadership development, political education and policy-change. Through their Bettering Our Schools System (B.O.S.S) Campaign started in 2011, the vision is to end the criminalization of Black and Brown students in the Oakland Unified School District; Invest in alternative models of school safety that don’t rely on police; And to restructure the current policies and practices within OUSD that don’t take a restorative justice approach to student discipline and promotes the school to prison pipeline. They are calling for the immediate removal of the Oakland Unified School police department. On June 24, 2020, OUSD will be voting on thier George Floyd Resolution to eliminate OSPD. If the board votes in favor of the resolution, Oakland will be the first district in the nation to eliminate an entire armed school police department.
-            </p>
+  </p>
+
+  <img class="background4" src="images/meeting.jpg"></img>
+  <p class='para'> <span class="parabold"><a href="https://www.stateofblackeducation.com/about-us">State of Black
+        Education Oakland </a></span><br>State of Black Education’s mission is to create equitable space to reflect on
+    Oakland’s Black community’s experiences with education in order to create and advocate for informed policy demands.
+    Current efforts include pushing for more Black educators in Oakland schools, raising awareness of the fact that most
+    Black graduates in OUSD do not meet A-G requirements for 4-year universities, and urging the district to use excess
+    property to help house teachers who cannot afford to live in Oakland. Past campaigns include the Opportunity Ticket,
+    through which the organization helped pass a policy that gives priority to parents to select the school of their
+    choice if their school happens to close down.
+  </p>
+
+  <img class="background4" src="images/veggie.jpg"></img>
+  <p class='para'> <span class="parabold"><a href="https://plantingjustice.org/food-justice-education">Planting
+        Justice</a></span><br>The Planting Justice Education Program activates people most directly impacted by poverty
+    and food injustice to create a more local and sustainable food system by developing their skills in ecological
+    design, nutrition education, and multimedia arts. The work of the Education program takes place at high schools in
+    East Oakland. Planting Justice hires staff directly from the communities they serve, and develops important
+    mentorship opportunities with our students through consistent weekly programming. Planting Justice Educators and
+    community allies have developed the Plant! Cook! Organize! curriculum, available online soon.
+  </p>
+
+  <img class="background4" src="images/car.jpg"></img>
+  <p class='para'>
+    <span class="parabold"><a href="http://blackorganizingproject.org/our-work/">Black Organizing
+        Project</a></span><br>Black Organizing Project is a Black member-led community organization reviving the spirit
+    of Oakland’s Black community through relationship building, leadership development, political education and
+    policy-change. Through their Bettering Our Schools System (B.O.S.S) Campaign started in 2011, the vision is to end
+    the criminalization of Black and Brown students in the Oakland Unified School District; Invest in alternative models
+    of school safety that don’t rely on police; And to restructure the current policies and practices within OUSD that
+    don’t take a restorative justice approach to student discipline and promotes the school to prison pipeline. They are
+    calling for the immediate removal of the Oakland Unified School police department. On June 24, 2020, OUSD will be
+    voting on thier George Floyd Resolution to eliminate OSPD. If the board votes in favor of the resolution, Oakland
+    will be the first district in the nation to eliminate an entire armed school police department.
+  </p>
 
 
 
@@ -82,4 +132,5 @@
 
 
 </body>
+
 </html>

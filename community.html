@@ -1,8 +1,9 @@
 <html>
+
 <head>
   <title>Community</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-  <link rel= "stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.4.1.js"> </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,85 +15,92 @@
 
 <body>
 
-    <a href="donate.html#donate">
-        <button class="donate">
-          Donate Now
-        </button>
-      </a>
+  <a href="donate.html#donate">
+    <button class="donate">
+      Donate Now
+    </button>
+  </a>
 
-      <div class="mobile hidden">
-        <div class="navmobile"><a href="none.html"> &nbsp </a></div>
-        <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
-        <div class="navmobile"><a href="move.html">The Mission</a></div>
-        <div class="navmobile"><a href="calculate.html">The Orgs</a></div>
-        <div class="navmobile"><a href="community.html">Resources</a></div>
-        <div class="navmobile"><a href="about.html">About Us</a></div>
+  <div class="mobile hidden">
+    <div class="navmobile"><a href="none.html"> &nbsp </a></div>
+    <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
+    <div class="navmobile"><a href="move.html">The Mission</a></div>
+    <div class="navmobile"><a href="calculate.html">The Orgs</a></div>
+    <div class="navmobile"><a href="community.html">Resources</a></div>
+    <div class="navmobile"><a href="about.html">About Us</a></div>
+  </div>
+
+  <div class="header">
+    <div class="left"><a href="index.html"><img class="logo" src="images/logo.png"></a></div>
+    <div class="right">
+      <button class="hammybutton">
+        <img src="images/hamburger.svg" id="burger" class="burger"></img>
+        <img src="images/x.svg" id="x" class="x hidden"></img>
+      </button>
+      <div class="nav"><a href="move.html">The Mission</a></div>
+      <div class="nav">
+        <a href="calculate.html">The Orgs</a>
       </div>
-
-          <div class="header">
-            <div class="left"><a href="index.html"><img class="logo" src="images/logo.svg"></a></div>
-            <div class="right">
-              <button class="hammybutton">
-                <img src="images/hamburger.svg" id="burger" class="burger"></img>
-                <img src="images/x.svg" id="x" class="x hidden"></img>
-              </button>
-              <div class="nav"><a href="move.html">The Mission</a></div>
-              <div class="nav">
-                <a href="calculate.html">The Orgs</a>
-              </div>
-              <div class="nav"><a href="community.html">Resources</a></span></div>
-              <div class="nav"><a href="about.html">About Us</a></span> </div>
-            </div>
-          </div>
+      <div class="nav"><a href="community.html">Resources</a></span></div>
+      <div class="nav"><a href="about.html">About Us</a></span> </div>
+    </div>
+  </div>
 
 
-          <script>
-        $( "button.hammybutton" ).click(function() {
-          $( ".mobile" ).slideToggle( "slow" );
-          $( ".mobile" ).removeClass( "hidden" );
-          $( '#x' ).toggleClass( "hidden" );
-          $( '#burger' ).toggleClass( "hidden" );
-        });
-          </script>
+  <script>
+    $("button.hammybutton").click(function () {
+      $(".mobile").slideToggle("slow");
+      $(".mobile").removeClass("hidden");
+      $('#x').toggleClass("hidden");
+      $('#burger').toggleClass("hidden");
+    });
+  </script>
 
-            <div class="spacer"></div>
-            <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
 
-            <p class="para">Thank you so much for helping us raise money for Black
-              Organizing Project, Planting Justice, and the State of Black Education.
-              Action does not end now. Here are resources and ways for you to stay
-              engaged with the Black Lives Matter movement and related social justice
-              initiatives.</p>
+  <p class="para">Thank you so much for helping us raise money for Black
+    Organizing Project, Planting Justice, and the State of Black Education.
+    Action does not end now. Here are resources and ways for you to stay
+    engaged with the Black Lives Matter movement and related social justice
+    initiatives.</p>
 
-            <div class="spacer"></div>
+  <div class="spacer"></div>
 
-            <p class="para"><span class="parabold">Watch</span>Learn more about the experiences of Black students
-            in Piedmont through this video by the Black Student Union.</p>
+  <p class="para"><span class="parabold">Watch</span>Learn more about the experiences of Black students
+    in Piedmont through this video by the Black Student Union.</p>
 
-            <iframe class="video" src="https://www.youtube.com/embed/fEQNiT-cqG4" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="video" src="https://www.youtube.com/embed/fEQNiT-cqG4" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            <p class="para"><span class="parabold">Learn</span>Three Miles: <a class="linky" href="https://www.thisamericanlife.org/550/three-miles">a podcast</a>
-              about a program that connects students from a public school in the country’s
-              poorest congressional district with students from a private school that
-              costs $43,000/year. The schools are 3 miles apart. </p>
+  <p class="para"><span class="parabold">Learn</span>Three Miles: <a class="linky"
+      href="https://www.thisamericanlife.org/550/three-miles">a podcast</a>
+    about a program that connects students from a public school in the country’s
+    poorest congressional district with students from a private school that
+    costs $43,000/year. The schools are 3 miles apart. </p>
 
-                <p class="para"><span class="parabold">Read</span>
-                Just Mercy by Bryan Stevenson: a true story about America’s criminal justice system.
-                </p>
+  <p class="para"><span class="parabold">Read</span>
+    Just Mercy by Bryan Stevenson: a true story about America’s criminal justice system.
+  </p>
 
-                <p class="para"><span class="parabold">Act</span>
-                Volunteer with <a class="linky" href="https://plantingjustice.org/work-with-us">Planting Justice</a>.
-                Write a blog post, get interviewed, and share your stories with <a class="linky" href="https://www.stateofblackeducation.com/get-involved">The State of Black Education Oakland</a>.
-                <br>
-                <br>
-                Donate a bike to <a class="linky" href="https://www.cyclesofchange.org/">Cycles of Change</a>, an East Bay organization that connects youth with bikes. Contact amalia.campbell@gmail.com for more information.
-                <br>
-                <br>
-                Help <a class="linky" href="https://www.kitscubed.com/projects">Kits Cubed</a> inspire Oakland youth to explore and enjoy science by donating a science kit for a student's first experiments.
-                <br>
-                <br>And here is a <a class="linky" href="https://docs.google.com/document/d/1JbYbUAlO9DSUulRaxbgpQZLiNJ1WbjeBr9_6pR1sT_E/edit?usp=sharing">list</a> of policy proposals for Piedmont specifically to combat anti-racism by the Piedmont Racial Equity Campaign.
-                </p>
+  <p class="para"><span class="parabold">Act</span>
+    Volunteer with <a class="linky" href="https://plantingjustice.org/work-with-us">Planting Justice</a>.
+    Write a blog post, get interviewed, and share your stories with <a class="linky"
+      href="https://www.stateofblackeducation.com/get-involved">The State of Black Education Oakland</a>.
+    <br>
+    <br>
+    Donate a bike to <a class="linky" href="https://www.cyclesofchange.org/">Cycles of Change</a>, an East Bay
+    organization that connects youth with bikes. Contact amalia.campbell@gmail.com for more information.
+    <br>
+    <br>
+    Help <a class="linky" href="https://www.kitscubed.com/projects">Kits Cubed</a> inspire Oakland youth to explore and
+    enjoy science by donating a science kit for a student's first experiments.
+    <br>
+    <br>And here is a <a class="linky"
+      href="https://docs.google.com/document/d/1JbYbUAlO9DSUulRaxbgpQZLiNJ1WbjeBr9_6pR1sT_E/edit?usp=sharing">list</a>
+    of policy proposals for Piedmont specifically to combat anti-racism by the Piedmont Racial Equity Campaign.
+  </p>
 
 </body>
+
 </html>

@@ -1,63 +1,61 @@
 <html>
-  <head>
-    <title>The Movement</title>
-    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
+<head>
+  <title>The Movement</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
 
-    <div class="mobile hidden">
-      <div class="navmobile"><a href="none.html"> &nbsp </a></div>
-      <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
-      <div class="navmobile"><a href="move.html">The Mission</a></div>
+<body>
+
+  <div class="mobile hidden">
+    <div class="navmobile"><a href="none.html"> &nbsp </a></div>
+    <div class="navmobile"><a href="noen.html"> &nbsp </a></div>
+    <div class="navmobile"><a href="move.html">The Mission</a></div>
     <div class="navmobile"><a href="calculate.html">The Orgs</a></div>
     <div class="navmobile"><a href="community.html">Resources</a></div>
     <div class="navmobile"><a href="about.html">About Us</a></div>
+  </div>
+
+  <div class="header">
+    <div class="left"><a href="index.html"><img class="logo" src="images/logo.png"></a></div>
+    <div class="right">
+      <button class="hammybutton">
+        <img src="images/hamburger.svg" id="burger" class="burger"></img>
+        <img src="images/x.svg" id="x" class="x hidden"></img>
+      </button>
+      <div class="nav"><a href="move.html">The Mission</a></div>
+      <div class="nav">
+        <a href="calculate.html">The Orgs</a>
+      </div>
+      <div class="nav"><a href="community.html">Resources</a></span></div>
+      <div class="nav"><a href="about.html">About Us</a></span> </div>
     </div>
-
-        <div class="header">
-          <div class="left"><a href="index.html"><img class="logo" src="images/logo.svg"></a></div>
-          <div class="right">
-            <button class="hammybutton">
-              <img src="images/hamburger.svg" id="burger" class="burger"></img>
-              <img src="images/x.svg" id="x" class="x hidden"></img>
-            </button>
-            <div class="nav"><a href="move.html">The Mission</a></div>
-            <div class="nav">
-              <a href="calculate.html">The Orgs</a>
-            </div>
-            <div class="nav"><a href="community.html">Resources</a></span></div>
-            <div class="nav"><a href="about.html">About Us</a></span> </div>
-          </div>
-        </div>
+  </div>
 
 
-        <script>
-      $( "button.hammybutton" ).click(function() {
-        $( ".mobile" ).slideToggle( "slow" );
-        $( ".mobile" ).removeClass( "hidden" );
-        $( '#x' ).toggleClass( "hidden" );
-        $( '#burger' ).toggleClass( "hidden" );
-      });
-      </script>
+  <script>
+    $("button.hammybutton").click(function () {
+      $(".mobile").slideToggle("slow");
+      $(".mobile").removeClass("hidden");
+      $('#x').toggleClass("hidden");
+      $('#burger').toggleClass("hidden");
+    });
+  </script>
 
 
 
-    <!-- feel free to move anything from this point downward to a different place -->
-    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
-    <div></div>
-    <a name="donate"></a>
-    <div class="done">
-      <!-- this is the donor wall -->
-      <!-- <iframe
+  <!-- feel free to move anything from this point downward to a different place -->
+  <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
+  <div></div>
+  <a name="donate"></a>
+  <div class="done">
+    <!-- this is the donor wall -->
+    <!-- <iframe
         frameborder="0"
         name="donorbox"
         scrolling="no"
@@ -65,26 +63,19 @@
         src="https://donorbox.org/embed/piedmont-for-black-lives?only_donor_wall=true"
         style="width: 100%;  min-width:510px; max-height: none !important"
       ></iframe> -->
-      <!-- this is the donation form -->
-      <script
-        src="https://donorbox.org/widget.js"
-        paypalExpress="false"
-      ></script>
-      <iframe
-        allowpaymentrequest=""
-        frameborder="0"
-        height="900px"
-        name="donorbox"
-        scrolling="no"
-        seamless="seamless"
-        src="https://donorbox.org/embed/piedmont-for-oakland-public-schools"
-        style="max-width: 500px; min-width: 250px; max-height:none!important"
-        width="100%"
-      ></iframe>
-    </div>
+    <!-- this is the donation form -->
+    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
+    <!-- <iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless"
+      src="https://donorbox.org/embed/piedmont-for-oakland-public-schools"
+      style="max-width: 500px; min-width: 250px; max-height:none!important" width="100%"></iframe>
+  </div> -->
+    <div class="solike">Hello! Donations are closed for now, but will re-open with our campaign launch this Friday at
+      6pm.</div>
     <div class="donorbox-note">
-      We are a 501c3 Tax Deductible Organization thanks to our partnership with the Oakland ed fund. Our tax code [43-2014630].
+      We are a 501c3 Tax Deductible Organization thanks to our partnership with the Oakland ed fund. Our tax code
+      is [43-2014630].
       Note: It may take a few minutes for the leaderboard to update.
     </div>
-  </body>
+</body>
+
 </html>
