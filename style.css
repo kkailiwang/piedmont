@@ -83,7 +83,7 @@ body {
   flex-direction: column;
   align-items: center;
   background: none;
-
+  overflow: none;
 }
 
 /* the party up top */
