@@ -48,10 +48,21 @@ display: none;
 }
 
 .donorbox{
-  position: absolute;
-  max-height:none; 
-  top:40%; 
-  width: 90%;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+
+}
+
+.donor-container {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0%;
+  height: 100%;
+  width: 100%;
+  background-color: white;
 }
 .background {
   position: absolute;
@@ -204,7 +215,7 @@ body {
 
 /* the button of all buttons, button to the stars, big kahuna button */
 .donate {
-  visibility: hidden;
+ 
   position: fixed;
   bottom: 2.5vw;
   right: 3vw;
@@ -290,10 +301,9 @@ a:hover {
 .donorbox-note {
   display: flex;
   position: absolute;
-  left: 2.5vw;
-  bottom: 50px;
-  width: 50%;
-  font-size: 0.3em;
+  bottom: 30px;
+  width: 90%;
+  font-size: 15px;
   color: grey;
 }
 
@@ -947,10 +957,10 @@ a:hover {
 
   .donorbox-note {
     display: flex;
-    left: 5vw;
     width: 90%;
     font-size: 10px;
     color: grey;
+    bottom: 20px;
   }
 
 .done {
@@ -985,6 +995,17 @@ a:hover {
   bottom: 63px;
 }
 
+.note {
+  font-size: 20px;
+  width: 90%;
+  color: grey;
+}
+
+
+.donor-container {
+  margin-top: 15%;
+  height: 90%;
+}
 
 
 }
