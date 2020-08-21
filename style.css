@@ -17,6 +17,28 @@ src: url("Inter-Medium.woff2?v=3.13") format("woff2"),
      url("Inter-Medium.woff?v=3.13") format("woff");
 }
 
+.popup {
+  display: flex;
+  position: fixed;
+  bottom: 0%;
+  height: 5%;
+  width: 98%;
+  padding-left: 2%;
+  font-size: 20px;
+  background-color:#FFFA00;
+  color: black;
+  align-items: center;
+  justify-content: start;
+}
+
+
+.fuckoffbutt {
+  display: flex;
+  position: fixed;
+  right: 3%;
+  cursor: pointer;
+}
+
 .hammybutton {
 display: none;
 }
@@ -182,6 +204,7 @@ body {
 
 /* the button of all buttons, button to the stars, big kahuna button */
 .donate {
+  visibility: hidden;
   position: fixed;
   bottom: 2.5vw;
   right: 3vw;
@@ -940,6 +963,27 @@ a:hover {
   background: none;
 }
 
+.popup {
+  display: flex;
+  position: fixed;
+  bottom: 0%;
+  height: 100px;
+  width: 80%;
+  padding-left: 5%;
+  padding-right: 15%;
+  font-size: 20px;
+  background-color:#FFFA00;
+  color: black;
+  align-items: center;
+  justify-content: start;
+}
+
+.fuckoffbutt {
+  display: flex;
+  position: fixed;
+  right: 17px;
+  bottom: 63px;
+}
 
 
 

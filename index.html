@@ -70,6 +70,13 @@
     </div>
   </div>
 
+  <div id="popup" class="popup"><a href="https://us02web.zoom.us/webinar/register/WN_1UC1ChXRSCCXligvgexZhw">Donations
+      will re-open during our launch tonight, 6pm. Join us here!</a>
+
+    <div class="fuckoffbutt" onclick="changepos('popup');">✕</div>
+  </div>
+  </a>
+
 
   <script>
     $("button.hammybutton").click(function () {
@@ -78,6 +85,12 @@
       $('#x').toggleClass("hidden");
       $('#burger').toggleClass("hidden");
     });
+
+    function changepos(el) {
+      var elem = document.getElementById(el);
+      elem.style.transition = "transform 1s 0s"
+      elem.style.transform = 'translateY(200px)';
+    }
   </script>
 
 
