@@ -21,7 +21,7 @@ src: url("Inter-Medium.woff2?v=3.13") format("woff2"),
   display: flex;
   position: fixed;
   bottom: 0%;
-  height: 5%;
+  height: 45px;
   width: 98%;
   padding-left: 2%;
   font-size: 20px;
