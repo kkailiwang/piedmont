@@ -25,7 +25,12 @@ display: none;
 display: none;
 }
 
-
+.donorbox{
+  position: absolute;
+  max-height:none; 
+  top:40%; 
+  width: 90%;
+}
 .background {
   position: absolute;
   height: 100vh;
@@ -156,21 +161,22 @@ body {
 /* paragraph text */
 
 .para {
+  position: relative;
+  left: -22vw;
   display: block;
-  width: 95%;
-  font-size: 40px;
+  width: 50%;
+  font-size: 35px;
 }
 
 .parabold {
   display: block;
   width: 95%;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 500;
 }
 
 .linky {
-  text-decoration:underline;
-
+  text-decoration: underline;
   font-weight: 400;
 }
 
@@ -515,17 +521,26 @@ a:hover {
   height: 30.5vw;
   width: 30.5vw;
   object-fit: cover;
-
 }
 
 .innertext {
   font-family: 'Inter';
   position: relative;
-  top:70px;
-  left: 30px;
+  top:90px;
+  left: 45px;
   color: white;
-  font-weight: 500;
-  font-size: 30px;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.cofounder {
+  font-family: 'Inter';
+  position: relative;
+  bottom:65px;
+  left: 45px;
+  color: white;
+  font-weight: 200;
+  font-size: 23px;
 }
 
 .video {
@@ -615,14 +630,22 @@ a:hover {
     top:60px;
     left: 30px;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
   }
 
+  .cofounder {
+    font-family: 'Inter';
+    position: relative;
+    bottom:50px;
+    left: 30px;
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+  }
 
   .square {
     height: 89vw;
-    width: 89vw;
-    object-fit: cover;
+    width: 90vw;
   }
 
   .leader {
@@ -789,16 +812,22 @@ a:hover {
   .para {
     display: block;
     width: 90%;
-    font-size: 25px;
+    font-size: 22px;
+    position: unset;
   }
 
   .parabold {
     display: block;
     width: 90%;
-    font-size: 25px;
+    font-size: 22px;
   }
 
+.donorbox{
 
+  max-height:none!important; 
+  top:40%; 
+  width: 90%
+}
   .mobile {
     display: flex;
     flex-direction: column;
@@ -910,6 +939,8 @@ a:hover {
   width: 90vw;
   background: none;
 }
+
+
 
 
 }

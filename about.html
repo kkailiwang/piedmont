@@ -65,11 +65,12 @@
 
 
   <div class="spacer"></div>
-  <div class="maintext" style="width:95vw;">
+  <div class="maintext">
   </div>
 
   <div class="para">
-    POPS is a group of Piedmont High School Alums home from college
+    <span class="parabold">About Us</span><br>
+    POPS was started by a group of Piedmont High School Alums home from college
     with the desire to address the systemic racism that has plagued our community from its inception. After attending
     the Piedmont Protest for Black Lives on June 3rd, our
     team was inspired by how much of the Piedmont community came out to protest, while also left feeling like there is
@@ -80,89 +81,71 @@
     Piedmont.
   </div>
   <div class="spacer"></div>
-  <p class="parabold">Our Launch</p>
+  <!--<p class="parabold">Our Launch</p>
   <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/otCqdcj9NbU" frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <div class="spacer"></div>
   <div class="spacer"></div>
-  <p class="parabold">The Team</p>
+  <p class="parabold">The Team</p>-->
+  <span class="parabold">The Team</span>
   <div class="mayasface">
     <div class='square'>
-      <div class="innertext">Maya Guzdar</div><img class='square' src="images/maya.jpg">
+      <div class="innertext">Kate Broening</div>
+      <img class="square" src="images/kate.jpg">
+      <div id="kate" class="cofounder">Co-founder</div>
     </div>
     <div class='square'>
-      <div class="innertext">Sara Siqueira</div><img class="square" src="images/sara.png">
+      <div class="innertext">Jonathan Dinetz</div>
+      <img class="square" src="images/jonathan.jpg">
+      <div class="cofounder">Co-founder</div>
     </div>
     <div class='square'>
-      <div class="innertext">Kate Broening</div><img class="square" src="images/kate.jpg">
+      <div class="innertext">Anna Campbell</div>
+      <img class="square" src="images/anna.jpg">
+      <div class="cofounder">Co-founder</div>
     </div>
     <div class='square'>
-      <div class="innertext">Jonathan Dinetz</div><img class="square" src="images/jonathan.jpg">
+      <div class="innertext">Maya Guzdar</div>
+      <img class='square' src="images/mayag.JPG">
+      <div class="cofounder">Co-founder</div>
     </div>
     <div class='square'>
-      <div class="innertext">Anna Campbell</div><img class="square" src="images/anna.jpg">
+      <div class="innertext">Sara Siqueira</div>
+      <img class="square" src="images/sara.jpeg">
+      <div class="cofounder">Co-founder</div>
     </div>
     <div class='square'>
-      <div class="innertext">Nina Adarkar</div><img class="square" src="images/nina.jpg">
+      <div class="innertext">Nina Adarkar</div>
+      <img class="square" src="images/nina.jpg">
+      <div class="cofounder">Co-founder</div>
     </div>
     <div class='square'>
-      <div class="innertext">Kaili Wang</div><img class="square" src="images/kaili.jpg">
+      <div class="innertext">Grace Davies</div>
+      <img class="square" src="images/grace.jpg">
     </div>
     <div class='square'>
-      <div class="innertext">Anjuli Turner</div><img class="square" src="images/anjuli.jpg">
+      <div class="innertext">Kaelin Campbell</div>
+      <img class="square" src="images/kaelin.jpg">
     </div>
     <div class='square'>
-      <div class="innertext">Ang Lee</div><img class="square" src="images/randomguy.jpg">
+      <div class="innertext">Ang Lee</div>
+      <img class="square" src="images/ang.jpg">
     </div>
     <div class='square'>
-      <div class="innertext">Harmonee Ross</div><img class="square" src="images/rando2.jpg">
+      <div class="innertext">Harmonee Ross</div>
+      <img class="square" src="images/harmonee.jpg">
     </div>
     <div class='square'>
-      <div class="innertext">Rasheed Lockheart</div><img class="square" src="images/rando.jpg">
+      <div class="innertext">Anjuli Turner</div>
+      <img class=" square" src="images/anjuli2.jpg">
     </div>
-    <div class='square'>
-      <div class="innertext">Dirk Tillotson</div><img class="square" src="images/rando4.jpg">
-    </div>
-    <div class='square'>
-      <div class="innertext">Ni'Keah Manning</div><img class="square" src="images/rando6.jpg">
-    </div>
+
+
   </div>
 
   <div class="spacer"></div>
   <div class="spacer"></div>
 
-  <p class="para">
-    <span class="parabold"> Outreach Team:</span><br>
-    Madison Wilson,
-    Caroline Dunlap,
-    Sophie Hall,
-    Rafael Stankewitz,
-    Grace Davies,
-    Frankie Broening,
-    Emma Broening,
-    Ruby Guzdar,
-    Laila Adarkar,
-    Bridget Bentley,
-    Clara Feldman,
-    Julie Ray,
-    Kaelin Campbell,
-    Aya Troyer,
-    Cleo Tahawi,
-    Sarah Zimmerman,
-    Ben Stormer,
-    Sarah Lim,
-    Tali Cooper,
-    Lindsey Wolin,
-    Claire Lichty,
-    Ella Wright,
-    Avni Wadwani,
-    Merry Roberts,
-    Ava Bogart,
-    Shannon Landeer,
-    Lucy Barrett,
-    Gracie Ellis,
-    Sofia Butler
-  </p>
 
   <p class="para">
     <span class="parabold">Sponsors</span><br>
@@ -177,12 +160,26 @@
     Ryan Sin Photography<br>
     Black Orgnaizing Projects<br>
     Planting Justice<br>
-    State of Black Education
+    State of Black Education <br>
+    Thomas Broening<br>
+    The Oakland REACH<br>
+    The A-Z Fund<br>
   </p>
 
 
+  <script>
+    function changepos(el) {
+      var elem = document.getElementById(el);
+      elem.style.transition = "opacity 0.5s 0s";
+      elem.style.opacity = '100%';
+    }
 
-
+    function changeposback(el) {
+      var elem = document.getElementById(el);
+      elem.style.transition = "opacity 0.5s 0s";
+      elem.style.opacity = '0%';
+    }
+  </script>
 </body>
 
 </html>
