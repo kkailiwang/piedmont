@@ -559,21 +559,21 @@ a:hover {
 .innertext {
   font-family: 'Inter';
   position: relative;
-  top:90px;
-  left: 45px;
+  top:70px;
+  left: 40px;
   color: white;
-  font-weight: 300;
-  font-size: 40px;
+  font-weight: 400;
+  font-size: 30px;
 }
 
 .cofounder {
   font-family: 'Inter';
   position: relative;
   bottom:65px;
-  left: 45px;
+  left: 40px;
   color: white;
   font-weight: 200;
-  font-size: 23px;
+  font-size: 25px;
 }
 
 .video {
@@ -605,7 +605,21 @@ a:hover {
   }
 
 }
+@media only screen and (max-width: 1375px) {
+.mayasface {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 2.5vw;
+}
 
+.square {
+  height: 44.5vw;
+  width: 44.5vw;
+  object-fit: cover;
+}
+
+}
 @media only screen and (max-width: 875px) {
 /* up top */
 
