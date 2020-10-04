@@ -604,6 +604,10 @@ a:hover {
 
   }
 
+  #donate{
+    bottom: 110px;
+  } 
+
 }
 @media only screen and (max-width: 1375px) {
 .mayasface {
@@ -752,6 +756,11 @@ a:hover {
     font-weight: 400;
     font-display: swap;
   }
+
+    #donate{
+      bottom: 33vw;
+    }  
+
 
 /* hot mess */
   .topochico{
